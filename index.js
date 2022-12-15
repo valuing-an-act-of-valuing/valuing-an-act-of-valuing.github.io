@@ -14,7 +14,7 @@ async function populate() {
 function indexHeader(obj) {
   const head = document.querySelector('head');
   const titleIndex = document.createElement('title');
-  const enter = document.querySelector(".gallery b");
+  const enter = document.querySelector("#enter b");
   const title = document.querySelector(".title");
   const ogTitle = document.createElement('meta');
   titleIndex.textContent = obj.title;
@@ -111,10 +111,3 @@ function indexArc(obj) {
 }
 
 populate();
-
-const valueCSS = document.createElement("link");
-valueCSS.href = "https://creative-community.space/value/online/value.css";
-valueCSS.type = "text/css";
-valueCSS.rel = "stylesheet";
-
-document.getElementsByTagName("head")[0].appendChild(valueCSS);

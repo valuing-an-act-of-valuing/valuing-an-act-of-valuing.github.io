@@ -7,10 +7,10 @@
 
   "show" : [
     {
-      "date" : "Date",
-      "name" : "Title",
-      "page" : "show/",
-      "info" : "Infomation"
+      "date" : "Webtemplate",
+      "name" : "大切なもの",
+      "page" : "online/sample/",
+      "info" : "HTML/CSS/JavaScript/JSON"
     },
     {
       "date" : "Date",

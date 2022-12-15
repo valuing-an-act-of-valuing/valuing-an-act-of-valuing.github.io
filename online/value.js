@@ -12,7 +12,6 @@ async function populate() {
 function indexValue(obj) {
   const head = document.querySelector('head');
   const titleValue = document.createElement('title');
-  const valueIndex = "https://creative-community.space/value/"
   titleValue.textContent = `${obj.title} by ${obj.author}`;
   head.appendChild(titleValue);
 
@@ -22,31 +21,33 @@ function indexValue(obj) {
   const you = document.querySelector('#you');
   you.innerText = obj.author;
 
-  const authorValue = document.createElement( "meta" );
-  authorValue.setAttribute("name", "author");
-  authorValue.setAttribute("content", obj.author);
-  head.appendChild(authorValue);
+  const ogSite = document.createElement( "meta" );
+  ogSite.setAttribute("property", "og:site_name");
+  ogSite.setAttribute("content", obj.site);
+  head.appendChild(ogSite);
 
   const ogURL = document.createElement( "meta" );
   ogURL.setAttribute("property", "og:url");
-  ogURL.setAttribute("content", `${valueIndex}${obj.appreciate}${obj.page}`);
+  ogURL.setAttribute("content", `${obj.site}${obj.page}`);
   head.appendChild(ogURL);
 
   const ogIMG = document.createElement( "meta" );
-  ogIMG.setAttribute("property", "og:image");
-  ogIMG.setAttribute("content", `${valueIndex}${obj.appreciate}${obj.page}${obj.img}`);
-  head.appendChild(ogIMG);
-
   const twitterIMG = document.createElement( "meta" );
+  const coverImage = document.querySelector('#image');
+  ogIMG.setAttribute("property", "og:image");
   twitterIMG.setAttribute("name", "twitter:image");
-  twitterIMG.setAttribute("content", `${valueIndex}${obj.appreciate}${obj.page}${obj.img}`);
+  ogIMG.setAttribute("content", `${obj.site}${obj.page}${obj.src}`);
+  twitterIMG.setAttribute("content", `${obj.site}${obj.page}${obj.src}`);
+  coverImage.style.display = obj.img;
+  coverImage.style.backgroundImage = `url(${obj.src})`;
+  head.appendChild(ogIMG);
   head.appendChild(twitterIMG);
 }
 
 populate();
 
 const valueCSS = document.createElement( "link" );
-valueCSS.href = "https://creative-community.space/value/online/value.css";
+valueCSS.href = "../../online/value.css";
 valueCSS.type = "text/css";
 valueCSS.rel = "stylesheet";
 
