@@ -2,20 +2,19 @@
   "title" : "Gallery Your Name",
   "author" : "Your Name",
   "description" : "大切にすることを大切にするためのギャラリー",
-  "url" : "https://valuing-an-act-of-valuing.github.io/",
-  "image" : "show/003.jpeg",
+  "src" : "show/003.jpeg",
 
   "show" : [
     {
       "date" : "Webtemplate",
       "name" : "大切なもの",
-      "page" : "online/sample/",
+      "href" : "/online/sample/",
       "info" : "HTML/CSS/JavaScript/JSON"
     },
     {
       "date" : "Date",
       "name" : "Title",
-      "page" : "show/",
+      "href" : "/show/",
       "info" : "Infomation"
     }
   ],
@@ -24,7 +23,7 @@
     {
       "date" : "Date",
       "name" : "Title",
-      "page" : "archive/",
+      "href" : "/archive/",
       "info" : "Infomation"
     }
   ]

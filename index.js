@@ -42,24 +42,26 @@ function indexHeader(obj) {
   head.appendChild(ogDescription);
 
   const ogSite = document.createElement( "meta" );
-  const ogURL = document.createElement( "meta" );
   ogSite.setAttribute("property", "og:site_name");
-  ogURL.setAttribute("property", "og:url");
-  ogSite.setAttribute("content", obj.url);
-  ogURL.setAttribute("content", obj.url);
+  ogSite.setAttribute("content", location.hostname);
   head.appendChild(ogSite);
+
+  const ogURL = document.createElement( "meta" );
+  ogURL.setAttribute("property", "og:url");
+  ogURL.setAttribute("content", location.href);
   head.appendChild(ogURL);
 
   const ogIMG = document.createElement( "meta" );
   const twitterIMG = document.createElement( "meta" );
-  const coverImage = document.querySelector('#images');
   ogIMG.setAttribute("property", "og:image");
   twitterIMG.setAttribute("name", "twitter:image");
-  ogIMG.setAttribute("content", `${obj.url}${obj.image}`);
-  twitterIMG.setAttribute("content", `${obj.url}${obj.image}`);
-  coverImage.style.backgroundImage = `${obj.url}${obj.image}`;
+  ogIMG.setAttribute("content", `${location.href}${obj.src}`);
+  twitterIMG.setAttribute("content", `${location.href}${obj.src}`);
   head.appendChild(ogIMG);
   head.appendChild(twitterIMG);
+
+  const coverImage = document.querySelector('#images');
+  coverImage.style.backgroundImage = `url(${obj.src})`;
 }
 
 function indexShow(obj) {
@@ -74,7 +76,7 @@ function indexShow(obj) {
     const showI = document.createElement('I');
 
     showSpan.textContent = show.date;
-    showA.href = `${obj.url}${show.page}`;
+    showA.href = show.href;
     showA.textContent = show.name;
     showI.textContent = show.info;
 
@@ -98,7 +100,7 @@ function indexArc(obj) {
     const arcI = document.createElement('I');
 
     arcSpan.textContent = arc.date;
-    arcA.href = `${obj.url}${arc.page}`;
+    arcA.href = show.href;
     arcA.textContent = arc.name;
     arcI.textContent = arc.info;
 

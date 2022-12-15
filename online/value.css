@@ -103,7 +103,7 @@
 
 .other_app {
   padding: 2.5%;
-  margin: 5% auto 7.5%;
+  margin: 5% auto;
 }
 
 @media screen and (min-width: 750px) {
@@ -118,7 +118,7 @@
 
   .other_app {
     padding: 1rem;
-    margin: 2.5rem auto 5rem;
+    margin: 2.5rem auto;
   }
 }
 

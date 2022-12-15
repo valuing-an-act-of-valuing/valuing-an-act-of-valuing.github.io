@@ -1,0 +1,19 @@
+{
+  "title" : "タイトル",
+  "author" : "Gallery Your Name",
+  "date" : "会期 : ___",
+  "info" : "場所 : ___",
+  "site" : "___",
+  "page" : "/___/",
+  "cover" : "001.jpeg",
+  "images" : [
+    {
+      "id" : "___",
+      "src" : "___.jpg"
+    },
+    {
+      "id" : "___",
+      "src" : "___.jpg"
+    }
+  ]
+}

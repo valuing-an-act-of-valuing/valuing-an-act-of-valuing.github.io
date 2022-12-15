@@ -34,7 +34,7 @@
     </video>
 
     <script>
-    const random = [
+    var random = [
       "show/001.jpeg",
       "show/002.jpeg",
       "show/003.jpeg",
@@ -44,16 +44,15 @@
     ];
 
     function randomImg(randomArray) {
-      var random =
+      let random =
       randomArray[Math.floor(Math.random() * randomArray.length)];
       console.log(random);
       return random;
     }
 
     function backgroundImage() {
-      var images = document.querySelector("#images");
-      var img = `url(${randomImg(random)})`;
-      images.style.backgroundImage = img;
+      let images = document.querySelector("#images");
+      images.style.backgroundImage = `url(${randomImg(random)})`;
     }
     window.setInterval(function() {
       backgroundImage();
