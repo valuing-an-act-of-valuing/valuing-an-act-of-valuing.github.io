@@ -1,3 +1,7 @@
+How to Coding
 # valuing-an-act-of-valuing.github.io
 
-[valuing-an-act-of-valuing.github.io/draft/](https://valuing-an-act-of-valuing.github.io/draft/)
+[index.html](https://valuing-an-act-of-valuing.github.io/)
+
+id="images"
+トップページにランダム表示する画像のURL/動画ファイルのURLを記述

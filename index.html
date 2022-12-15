@@ -2,254 +2,81 @@
 <html lang="ja">
 
 <head>
-    <title>大切にすることを大切にするためのギャラリー</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="author" content="Your Name">
-    <meta name="description" content="this is a gallery for valuing an act of valuing">
-
-    <meta property="og:title" content="大切にすることを大切にするためのギャラリー" />
-    <meta property="og:description" content="this is a gallery for valuing an act of valuing" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="___" />
-    <meta property="og:site_name" content="creative-community.space" />
-    <meta property="og:image" content="https://creative-community.space/value/gallery/about/000.png" />
-    <meta property="og:locale" content="ja_JP" />
-
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@NLC_update" />
-    <meta name="twitter:image" content="https://creative-community.space/value/gallery/about/000.png" />
-
-    <link rel="icon" href="https://creative-community.space/value/gallery/about/000.png">
-    <link rel="apple-touch-icon" href="https://creative-community.space/value/gallery/about/000.png">
-    <style type="text/css">
-        #value {
-            position: fixed;
-            top: 5%;
-            left: 5%;
-            z-index: 100;
-            font-size: 75%;
-            -ms-writing-mode: tb-rl;
-            writing-mode: vertical-rl;
-        }
-        
-        #value a {
-            text-decoration: none;
-            color: #000;
-            font-family: 'Source Serif Pro', serif;
-            transition: all 2500ms ease;
-        }
-        
-        #value a:hover {
-            color: #fff;
-            border-left: 1px red solid;
-        }
-        
-        #infomation {
-            position: relative;
-            padding: 0;
-            top: 0;
-            left: 0;
-            width: 90%;
-            margin: 5vh 5vw;
-        }
-        
-        #infomation iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        #open {
-            opacity: 1;
-            position: absolute;
-            z-index: 100;
-            font-size: 1rem;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            text-decoration: none;
-            transition: all 2500ms ease;
-        }
-        
-        .open #open {
-            top: 90%;
-            left: 10%;
-            transition: all 5000ms ease;
-        }
-        
-        #open span {
-            display: inline-block;
-            color: #000;
-            font-weight: bolder;
-            font-family: 'Source Serif Pro', serif;
-            animation: 2.5s linear infinite alternate gallery;
-        }
-        
-        @keyframes gallery {
-            from {
-                filter: invert(1);
-            }
-            to {
-                filter: invert(0);
-            }
-        }
-        
-        #open:hover {
-            opacity: 0.25;
-        }
-        
-        #open b {
-            font-size: 150%;
-            font-weight: 100;
-            line-height: 200%;
-        }
-        
-        #infomation {
-            z-index: 0;
-            opacity: 0;
-            pointer-events: none;
-            user-select: none;
-            height: 0;
-            transition: all 4500ms ease;
-        }
-        
-        .open #infomation {
-            z-index: 1;
-            opacity: 1;
-            pointer-events: all;
-            user-select: auto;
-            width: 90%;
-            height: 90vh;
-            transition: all 5000ms ease;
-        }
-        
-        #present,
-        #randomImg {
-            position: fixed;
-            margin: 0;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            overflow: hidden;
-            width: 100%;
-            height: 100vh;
-            user-select: none;
-            pointer-events: none;
-        }
-        
-        #video,
-        #randomImg img {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            min-height: 100%;
-            min-width: 100%;
-        }
-        
-        @media screen and (max-width: 920px) {
-            .open {
-                height: 85vh;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@pe_hu_" />
+  <link rel="icon" href="___">
+  <link rel="apple-touch-icon" href="___">
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,600;0,700;1,600&display=swap" rel="stylesheet">
 </head>
 
-<body id="gallery">
-
-    <div id="randomImg">
-        <img src="show/001.jpeg">
+<body>
+  <main id="value">
+    <div class="ja_app"></div>
+    <div class="en_app">
+      <b class="title"></b><br/>
+      <span class="description"></span>
     </div>
+    <script src="index.js"></script>
+  </main>
 
-<!--
-    <div id="present" class="">
-        <video id="video" webkit-playsinline playsinline muted autoplay loop>
-      <source src="___" type="video/mp4">
-      <p>動画を再生できる環境ではありません。</p>
-      </video>
-    </div>
--->
+  <section id="images">
+    <video webkit-playsinline playsinline muted autoplay loop>
+      <source src="___" type="video/mp4"></source>
+    </video>
 
-    <span id="value"><a href="https://creative-community.space/value/gallery/" target="_parent">大切にすることを大切にするためのギャラリー</a></span>
-
-    <a id="open" href="#infomation">
-        <span>
-            <u>gallery</u>
-            <i>your name</i>
-        </span>
-    </a>
-        
-    <div id="infomation" class="none">
-        <iframe src="about/index.html"></iframe>
-    </div>
-
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script>
-        let btn = document.querySelector('#open');
-        let open = document.querySelector('#gallery');
+    const random = [
+      "show/001.jpeg",
+      "show/002.jpeg",
+      "show/003.jpeg",
+      "show/004.jpeg",
+      "show/005.jpeg",
+      "show/006.jpeg"
+    ];
 
-        let btnToggleclass = function(el) {
-            el.classList.toggle('open');
-        }
+    function randomImg(randomArray) {
+      var random =
+      randomArray[Math.floor(Math.random() * randomArray.length)];
+      console.log(random);
+      return random;
+    }
 
-        btn.addEventListener('click', function() {
-            btnToggleclass(open);
-        }, false);
-        $(function() {
-            var p = $("#do");
-            p.scrollLeft(1000);
-        });
-
-
-        const random = [
-            "show/001.jpeg",
-            "show/002.jpeg",
-            "show/003.jpeg",
-            "show/004.jpeg",
-            "show/005.jpeg",
-            "show/006.jpeg"
-        ];
-
-        function randomImg(randomArray) {
-            var random =
-                randomArray[Math.floor(Math.random() * randomArray.length)];
-            console.log(random);
-            return random;
-        }
-
-        function imgGenerator() {
-            var img = `<img src="${randomImg(random)} ">`;
-            document.querySelector("#randomImg").innerHTML = img;
-        }
-        window.setInterval(function() {
-            imgGenerator();
-        }, 5000);
-
-
-        $(function() {
-            // #で始まるアンカーをクリックした場合に処理
-            $('a[href^=#]').click(function() {
-                // スクロールの速度
-                var speed = 1500; // ミリ秒
-                // アンカーの値取得
-                var href = $(this).attr("href");
-                // 移動先を取得
-                var target = $(href == "#" || href == "" ? 'html' : href);
-                // 移動先を数値で取得
-                var position = target.offset().top;
-                // スムーススクロール
-                $('body,html').animate({
-                    scrollTop: position
-                }, speed, 'swing');
-                return false;
-            });
-        });
+    function backgroundImage() {
+      var images = document.querySelector("#images");
+      var img = `url(${randomImg(random)})`;
+      images.style.backgroundImage = img;
+    }
+    window.setInterval(function() {
+      backgroundImage();
+    }, 1000);
     </script>
+  </section>
+
+  <button id="enter" class="gallery" type="button"><b></b></button>
+
+  <script>
+  let btn = document.querySelector('#enter');
+  let open = document.querySelector('body');
+
+  let btnToggleclass = function(el) {
+    el.classList.toggle('open');
+  }
+
+  btn.addEventListener('click', function() {
+    btnToggleclass(open);
+  }, false);
+  </script>
+
+  <a id="link" href="https://creative-community.space/value/gallery/" target="_parent">大切にすることを大切にするためのギャラリー</a>
+
 </body>
 
 </html>

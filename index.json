@@ -1,0 +1,31 @@
+{
+  "title" : "Gallery Your Name",
+  "author" : "Your Name",
+  "description" : "大切にすることを大切にするためのギャラリー",
+  "url" : "https://valuing-an-act-of-valuing.github.io/",
+  "image" : "show/003.jpeg",
+
+  "show" : [
+    {
+      "date" : "Date",
+      "name" : "Title",
+      "page" : "show/",
+      "info" : "Infomation"
+    },
+    {
+      "date" : "Date",
+      "name" : "Title",
+      "page" : "show/",
+      "info" : "Infomation"
+    }
+  ],
+
+  "archive" : [
+    {
+      "date" : "Date",
+      "name" : "Title",
+      "page" : "archive/",
+      "info" : "Infomation"
+    }
+  ]
+}
