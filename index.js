@@ -100,7 +100,7 @@ function indexArc(obj) {
     const arcI = document.createElement('I');
 
     arcSpan.textContent = arc.date;
-    arcA.href = show.href;
+    arcA.href = arc.href;
     arcA.textContent = arc.name;
     arcI.textContent = arc.info;
 
