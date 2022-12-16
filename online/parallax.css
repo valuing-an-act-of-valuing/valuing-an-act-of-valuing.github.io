@@ -17,6 +17,7 @@ body,
   z-index: 100;
   bottom:-100vh;
   left:0;
+  transition: 1s;
 }
 
 #parallax span {

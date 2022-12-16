@@ -12,6 +12,12 @@
     position: fixed;
     width: 100%;
   }
+
+  #footer:hover {
+    cursor: pointer;
+    background: #0009;
+    color: #fff;
+  }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,7 +43,7 @@
     <span class="jpeg_006"></span>
   </section>
 
-  <footer id="footer">
+  <footer id="footer" onclick="window.history.back(); return false;">
     <script>
     document.write("<div>location.href " + location.href + "</div>");
     document.write("<div>location.protocol " + location.protocol + "</div>");
