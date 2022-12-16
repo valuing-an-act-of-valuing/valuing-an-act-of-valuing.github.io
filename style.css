@@ -1,9 +1,56 @@
-body,
-#show,
-#images,
-#link {
-  padding: 0;
-  margin: 0;
+:root {
+  --main-font: 'Source Serif Pro', serif;
+  --sub-font: "YuGothic", "Yu Gothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+  --bg-color: #fff7;
+  --text-color: #000;
+  --sub-color: forestgreen;
+}
+
+#value .ja_app::before {
+  content: 'Topics';
+  display: block;
+  font-size: 125%;
+  position: absolute;
+  right: 0;
+}
+
+#value .ja_app,
+#enter {
+  text-shadow:
+  1px 1px 0 #fff,
+  2px 2px 0 #fff;
+}
+
+#value .other_app {
+  text-shadow:
+  -1px 1px 0 #fff;
+}
+
+a,
+#enter,
+.open #value {
+  transition: all 2500ms ease;
+}
+
+#enter,
+#value a {
+  animation: 2.5s linear infinite alternate enter;
+}
+
+a:hover,
+#enter:hover,
+#value a:hover {
+  animation: .25s linear infinite alternate enter;
+  cursor: pointer;
+}
+
+@keyframes enter {
+  from {
+    color: var(--text-color);
+  }
+  to {
+    color: var(--sub-color);
+  }
 }
 
 html {
@@ -14,12 +61,17 @@ html {
   box-sizing: border-box;
 }
 
-:root {
-  --main-font: 'Source Serif Pro', serif;
-  --sub-font: "YuGothic", "Yu Gothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
-  --bg-color: #fff7;
-  --text-color: #000;
-  --sub-color: forestgreen;
+body,
+#show,
+#images,
+#link {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
 }
 
 body {
@@ -29,13 +81,6 @@ body {
 #link {
   -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl;
-}
-
-#value .ja_app,
-#enter {
-  text-shadow:
-  1px 1px 0 #fff,
-  2px 2px 0 #fff;
 }
 
 #enter b {
@@ -67,38 +112,6 @@ body {
   }
 }
 
-a,
-#enter,
-.open #value {
-  transition: all 2500ms ease;
-}
-
-a {
-  color: var(--text-color);
-  text-decoration: none;
-}
-
-#enter,
-#value a {
-  animation: 2.5s linear infinite alternate enter;
-}
-
-a:hover,
-#enter:hover,
-#value a:hover {
-  animation: .25s linear infinite alternate enter;
-  cursor: pointer;
-}
-
-@keyframes enter {
-  from {
-    color: var(--text-color);
-  }
-  to {
-    color: var(--sub-color);
-  }
-}
-
 #value {
   position: relative;
   top: 0;
@@ -108,20 +121,12 @@ a:hover,
 }
 
 #value {
-  opacity: 0;
-  overflow: hidden;;
   height: 0;
+  opacity: 0;
+  overflow: hidden;
   pointer-events: none;
   user-select: none;
   z-index: 0;
-}
-
-#value .ja_app::before {
-  content: '* Topics';
-  display: block;
-  font-size: 125%;
-  position: absolute;
-  right: 0;
 }
 
 #value .ja_app {
@@ -144,17 +149,21 @@ a:hover,
   margin-bottom: 0;
 }
 
-#value .en_app span,
-#value .en_app a {
-  margin-right: 0.25rem;
+#value .other_app {
+  margin: 0 auto;
 }
 
-#value .en_app a,
-#value .en_app b {
-  font-size: 150%;
+#value .other_app u,
+#value .other_app a {
+  margin-right: 0.5rem;
 }
 
-#value .en_app a {
+#value .en_app b,
+#value .other_app a {
+  font-size: 125%;
+}
+
+#value .other_app a {
   padding: 0.125rem;
 }
 
@@ -221,10 +230,11 @@ a:hover,
   background-position: 50% 50%;
   user-select: none;
   pointer-events: none;
-  z-index: 0;
+  z-index: -1;
 }
 
 #images video {
+  z-index: 0;
   min-height: 100%;
   min-width: 100%;
 }
@@ -235,8 +245,8 @@ a:hover,
   padding-left: 1.25%;
   top: 5%;
   left: 5%;
-  z-index: 100;
   opacity: 1;
+  z-index: 100;
 }
 
 .open #link {

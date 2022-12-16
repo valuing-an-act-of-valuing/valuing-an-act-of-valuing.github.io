@@ -1,45 +1,47 @@
-async function populate() {
-  const requestURL = 'index.json';
-  const request = new Request(requestURL);
+const head = document.querySelector('head');
 
-  const response = await fetch(request);
-  const indexJson = await response.text();
+let requestURL = 'index.json';
+let request = new XMLHttpRequest();
 
-  const indexIndex = JSON.parse(indexJson);
-  indexHeader(indexIndex);
+request.open('GET', requestURL);
+request.responseType = 'text';
+request.send();
+
+request.onload = function() {
+  const indexIndexText = request.response;
+  const indexIndex = JSON.parse(indexIndexText);
+  indexHead(indexIndex);
   indexShow(indexIndex);
   indexArc(indexIndex);
 }
 
-function indexHeader(obj) {
-  const head = document.querySelector('head');
-  const titleIndex = document.createElement('title');
-  const enter = document.querySelector("#enter b");
-  const title = document.querySelector(".title");
+function indexHead(obj) {
+  const indexTitle = document.createElement('title');
   const ogTitle = document.createElement('meta');
-  titleIndex.textContent = obj.title;
-  enter.textContent = obj.title;
-  title.textContent = obj.title;
+  indexTitle.textContent = obj['title'];
   ogTitle.setAttribute("property", "og:title");
-  ogTitle.setAttribute("content", obj.title);
-  head.appendChild(titleIndex);
+  ogTitle.setAttribute("content", obj['title']);
+  head.appendChild(indexTitle);
   head.appendChild(ogTitle);
 
-  const authorIndex = document.createElement( "meta" );
-  authorIndex.setAttribute("name", "author");
-  authorIndex.setAttribute("content", obj.author);
-  head.appendChild(authorIndex);
-
-  const descriptionIndex = document.createElement( "meta" );
+  const indexDescription = document.createElement('meta');
   const ogDescription = document.createElement('meta');
-  const description = document.querySelector(".description");
-  descriptionIndex.setAttribute("name", "description");
+  indexDescription.setAttribute("name", "description");
+  indexDescription.setAttribute("content", obj['description']);
   ogDescription.setAttribute("property", "og:description");
-  descriptionIndex.setAttribute("content", obj.description);
-  ogDescription.setAttribute("content", obj.description);
-  description.textContent = obj.description;
-  head.appendChild(descriptionIndex);
+  ogDescription.setAttribute("content", obj['description']);
+  head.appendChild(indexDescription);
   head.appendChild(ogDescription);
+
+  const indexAuthor = document.createElement( "meta" );
+  indexAuthor.setAttribute("name", "author");
+  indexAuthor.setAttribute("content", obj['author']);
+  head.appendChild(indexAuthor);
+
+  const indexEmail = document.createElement( "meta" );
+  indexEmail.setAttribute("name", "reply-to");
+  indexEmail.setAttribute("content", obj['email']);
+  head.appendChild(indexEmail);
 
   const ogSite = document.createElement( "meta" );
   ogSite.setAttribute("property", "og:site_name");
@@ -55,30 +57,37 @@ function indexHeader(obj) {
   const twitterIMG = document.createElement( "meta" );
   ogIMG.setAttribute("property", "og:image");
   twitterIMG.setAttribute("name", "twitter:image");
-  ogIMG.setAttribute("content", `${location.href}${obj.src}`);
-  twitterIMG.setAttribute("content", `${location.href}${obj.src}`);
+  ogIMG.setAttribute("content", location.protocol + '//' + location.hostname + '/' + obj['src']);
+  twitterIMG.setAttribute("content", location.protocol + '//' + location.hostname + '/' + obj['src']);
   head.appendChild(ogIMG);
   head.appendChild(twitterIMG);
 
+  const enter = document.querySelector("#enter b");
+  enter.textContent = obj.title;
+
   const coverImage = document.querySelector('#images');
-  coverImage.style.backgroundImage = `url(${obj.src})`;
+  coverImage.style.backgroundImage = 'url(' + obj.src + ')';
+
+  const videoImage = document.createElement( "source" );
+  videoImage.setAttribute("type", "video/mp4");
+  videoImage.setAttribute("src", obj.video);
 }
 
 function indexShow(obj) {
   const valueShow = document.querySelector('#value .ja_app');
-  const itemsShow = obj.show;
+  const shows = obj['show'];
 
-  for (const show of itemsShow) {
+  for (let i = 0; i < shows.length; i++) {
     const showP = document.createElement('p');
     const showSpan = document.createElement('span');
     const showBR = document.createElement('br');
     const showA = document.createElement('a');
     const showI = document.createElement('I');
 
-    showSpan.textContent = show.date;
-    showA.href = show.href;
-    showA.textContent = show.name;
-    showI.textContent = show.info;
+    showSpan.textContent = shows[i].date;
+    showA.textContent = shows[i].name;
+    showA.href = shows[i].href;
+    showI.textContent = shows[i].info;
 
     showP.appendChild(showSpan);
     showP.appendChild(showBR);
@@ -90,26 +99,43 @@ function indexShow(obj) {
 }
 
 function indexArc(obj) {
-  const valueArc = document.querySelector('#value .en_app');
-  const itemsArc = obj.archive;
+  const valueArc = document.querySelector('#value');
+  const archive = obj['archive'];
 
-  for (const arc of itemsArc) {
-    const arcP = document.createElement('p');
-    const arcSpan = document.createElement('span');
+  for (let i = 0; i < archive.length; i++) {
+    const arcDiv = document.createElement('div');
+    arcDiv.setAttribute("class", "other_app");
+
+    const arcH3 = document.createElement('h3');
+    const arcU = document.createElement('u');
     const arcA = document.createElement('a');
-    const arcI = document.createElement('I');
 
-    arcSpan.textContent = arc.date;
-    arcA.href = arc.href;
-    arcA.textContent = arc.name;
-    arcI.textContent = arc.info;
+    arcU.textContent = archive[i].date;
+    arcA.href = archive[i].href;
+    arcA.textContent = archive[i].name;
 
-    arcP.appendChild(arcSpan);
-    arcP.appendChild(arcA);
-    arcP.appendChild(arcI);
+    arcH3.appendChild(arcU);
+    arcH3.appendChild(arcA);
 
-    valueArc.appendChild(arcP);
+    arcDiv.appendChild(arcH3);
+    valueArc.appendChild(arcDiv);
+
+    const infomation  = archive[i].info;
+    for (let j = 0; j < infomation.length; j++) {
+      const infoP = document.createElement('p');
+      infoP.textContent = infomation[j];
+      arcDiv.appendChild(infoP);
+    }
   }
-}
 
-populate();
+  const galleryDiv = document.createElement('div');
+  galleryDiv.setAttribute("class", "en_app");
+  const titleB = document.createElement('b');
+  titleB.textContent = obj.title;
+  const descriptionP = document.createElement('p');
+  descriptionP.textContent = obj.description;
+
+  galleryDiv.appendChild(titleB);
+  galleryDiv.appendChild(descriptionP);
+  valueArc.appendChild(galleryDiv);
+}

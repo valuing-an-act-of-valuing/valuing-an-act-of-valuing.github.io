@@ -1,15 +1,16 @@
 {
   "title" : "Gallery Your Name",
-  "author" : "Your Name",
   "description" : "大切にすることを大切にするためのギャラリー",
+  "author" : "Your Name",
   "src" : "show/003.jpeg",
+  "video" : "___",
 
   "show" : [
     {
       "date" : "Webtemplate",
       "name" : "大切なもの",
       "href" : "/online/sample/",
-      "info" : "HTML/CSS/JavaScript/JSON"
+      "info" : "Infomation"
     },
     {
       "date" : "Date",
@@ -18,19 +19,25 @@
       "info" : "Infomation"
     }
   ],
-  
+
   "archive" : [
     {
       "date" : "Date",
       "name" : "Title",
       "href" : "/archive/",
-      "info" : "Infomation"
+      "info" : [
+        "Infomation",
+        "More"
+      ]
     },
     {
       "date" : "Date",
       "name" : "Title",
       "href" : "/archive/",
-      "info" : "Infomation"
+      "info" : [
+        "Infomation",
+        "More"
+      ]
     }
   ]
 }

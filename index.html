@@ -21,44 +21,38 @@
 <body>
   <main id="value">
     <div class="ja_app"></div>
-    <div class="en_app">
-      <b class="title"></b><br/>
-      <span class="description"></span>
-    </div>
-    <script src="index.js"></script>
   </main>
+  <script src="index.js"></script>
 
   <section id="images">
-    <video webkit-playsinline playsinline muted autoplay loop>
-      <source src="___" type="video/mp4"></source>
-    </video>
-
-    <script>
-    var random = [
-      "show/001.jpeg",
-      "show/002.jpeg",
-      "show/003.jpeg",
-      "show/004.jpeg",
-      "show/005.jpeg",
-      "show/006.jpeg"
-    ];
-
-    function randomImg(randomArray) {
-      let random =
-      randomArray[Math.floor(Math.random() * randomArray.length)];
-      console.log(random);
-      return random;
-    }
-
-    function backgroundImage() {
-      let images = document.querySelector("#images");
-      images.style.backgroundImage = `url(${randomImg(random)})`;
-    }
-    window.setInterval(function() {
-      backgroundImage();
-    }, 250);
-    </script>
+    <video webkit-playsinline playsinline muted autoplay loop></video>
   </section>
+
+  <script>
+  var random = [
+    "show/001.jpeg",
+    "show/002.jpeg",
+    "show/003.jpeg",
+    "show/004.jpeg",
+    "show/005.jpeg",
+    "show/006.jpeg"
+  ];
+
+  function randomImg(randomArray) {
+    let random =
+    randomArray[Math.floor(Math.random() * randomArray.length)];
+    console.log(random);
+    return random;
+  }
+
+  function backgroundImage() {
+    let images = document.querySelector("#images");
+    images.style.backgroundImage = `url(${randomImg(random)})`;
+  }
+  window.setInterval(function() {
+    backgroundImage();
+  }, 1000);
+  </script>
 
   <button id="enter" type="button"><b></b></button>
 

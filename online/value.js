@@ -1,30 +1,31 @@
-async function populate() {
-  const requestURL = 'index.json';
-  const request = new Request(requestURL);
+const head = document.querySelector('head');
 
-  const response = await fetch(request);
-  const json = await response.text();
+let requestURL = 'index.json';
+let request = new XMLHttpRequest();
 
-  const index = JSON.parse(json);
-  indexValue(index);
+request.open('GET', requestURL);
+request.responseType = 'text';
+request.send();
+
+request.onload = function() {
+  const indexIndexText = request.response;
+  const indexIndex = JSON.parse(indexIndexText);
+  indexHead(indexIndex);
 }
 
-function indexValue(obj) {
-  const head = document.querySelector('head');
-  const titleValue = document.createElement('title');
-  titleValue.textContent = `${obj.title} by ${obj.author}`;
-  head.appendChild(titleValue);
+function indexHead(obj) {
+  const indexTitle = document.createElement('title');
+  const ogTitle = document.createElement('meta');
+  indexTitle.textContent = obj['title'] + ' | ' + obj['author'];
+  ogTitle.setAttribute("property", "og:title");
+  ogTitle.setAttribute("content", obj['title'] + ' | ' + obj['author']);
+  head.appendChild(indexTitle);
+  head.appendChild(ogTitle);
 
-  const what = document.querySelector('#what b');
-  what.innerText = obj.title;
-
-  const you = document.querySelector('#you');
-  you.innerText = obj.author;
-
-  const authorValue = document.createElement( "meta" );
-  authorValue.setAttribute("name", "author");
-  authorValue.setAttribute("content", obj.author);
-  head.appendChild(authorValue);
+  const indexAuthor = document.createElement( "meta" );
+  indexAuthor.setAttribute("name", "author");
+  indexAuthor.setAttribute("content", obj['author']);
+  head.appendChild(indexAuthor);
 
   const ogSite = document.createElement( "meta" );
   ogSite.setAttribute("property", "og:site_name");
@@ -40,17 +41,21 @@ function indexValue(obj) {
   const twitterIMG = document.createElement( "meta" );
   ogIMG.setAttribute("property", "og:image");
   twitterIMG.setAttribute("name", "twitter:image");
-  ogIMG.setAttribute("content", `${location.href}${obj.src}`);
-  twitterIMG.setAttribute("content", `${location.href}${obj.src}`);
+  ogIMG.setAttribute("content", location.protocol + '//' + location.hostname + '/' + obj['src']);
+  twitterIMG.setAttribute("content", location.protocol + '//' + location.hostname + '/' + obj['src']);
   head.appendChild(ogIMG);
   head.appendChild(twitterIMG);
-  
+
+  const what = document.querySelector('#what b');
+  what.innerText = obj.title;
+
+  const you = document.querySelector('#you');
+  you.innerText = obj.author;
+
   const coverImage = document.querySelector('#image');
   coverImage.style.display = obj.img;
-  coverImage.style.backgroundImage = `url(${obj.src})`;
+  coverImage.style.backgroundImage = 'url(' + obj.image + ')';
 }
-
-populate();
 
 const valueCSS = document.createElement( "link" );
 valueCSS.href = "../../online/value.css";
