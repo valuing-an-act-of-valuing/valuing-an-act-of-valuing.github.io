@@ -75,6 +75,6 @@ body,
   background-image: url(../show/006.jpeg);
   background-size: 100%;
   top: 275%;
-  left: 10%;
+  right: 15%;
   z-index: -2;
 }
