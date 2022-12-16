@@ -46,7 +46,28 @@
   }
   window.setInterval(function() {
     backgroundImage();
-  }, 250);
+  }, 500);
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+  let timedelay = 0;
+  function delayCheck() {
+    if (timedelay == 25) {
+      $('#images video').fadeIn();
+      timedelay = 1;
+    }
+    timedelay = timedelay + 1;
+  }
+
+  $(document).mousemove(function () {
+    $('#images video').fadeOut();
+    timedelay = 5;
+    clearInterval(_delay);
+    _delay = setInterval(delayCheck, 500);
+  });
+
+  _delay = setInterval(delayCheck, 500)
   </script>
 
   <main id="value">
