@@ -10,60 +10,67 @@ async function populate() {
 }
 
 function indexHeader(obj) {
-  const host = location.hostname;
   const head = document.querySelector('head');
-  const titleIndex = document.createElement('title');
+  const indexTitle = document.createElement('title');
   const ogTitle = document.createElement('meta');
-  titleIndex.textContent = `${obj.title} | ${obj.author}`;
+  indexTitle.textContent = `${obj.title} | ${obj.author}`;
   ogTitle.setAttribute("property", "og:title");
   ogTitle.setAttribute("content", `${obj.title} | ${obj.author}`);
-  head.appendChild(titleIndex);
+  head.appendChild(indexTitle);
   head.appendChild(ogTitle);
-  const title = document.querySelector("#what b");
-  title.textContent = obj.title;
+
+  const indexAuthor = document.createElement( "meta" );
+  indexAuthor.setAttribute("name", "author");
+  indexAuthor.setAttribute("content", obj.author);
+  head.appendChild(indexAuthor);
+
+  const indexDescription = document.createElement( "meta" );
+  const ogDescription = document.createElement('meta');
+  indexDescription.setAttribute("name", "description");
+  ogDescription.setAttribute("property", "og:description");
+  indexDescription.setAttribute("content", `${obj.date} | ${obj.info}`);
+  ogDescription.setAttribute("content", `${obj.date} | ${obj.info}`);
+  head.appendChild(indexDescription);
+  head.appendChild(ogDescription);
+
+  const ogSite = document.createElement( "meta" );
+  ogSite.setAttribute("property", "og:site_name");
+  ogSite.setAttribute("content", location.hostname);
+  head.appendChild(ogSite);
+
+  const ogURL = document.createElement( "meta" );
+  ogURL.setAttribute("property", "og:url");
+  ogURL.setAttribute("content", location.href);
+  head.appendChild(ogURL);
+
+  const ogIMG = document.createElement( "meta" );
+  const twitterIMG = document.createElement( "meta" );
+  ogIMG.setAttribute("property", "og:image");
+  twitterIMG.setAttribute("name", "twitter:image");
+  ogIMG.setAttribute("content", `${location.href}${obj.src}`);
+  twitterIMG.setAttribute("content", `${location.href}${obj.src}`);
+  head.appendChild(ogIMG);
+  head.appendChild(twitterIMG);
+
+  const titleB = document.querySelector("#what b");
+  titleB.textContent = obj.title;
   const titleClass = document.querySelector(".title");
   titleClass.textContent = obj.title;
-
-  const authorIndex = document.createElement( "meta" );
-  authorIndex.setAttribute("name", "author");
-  authorIndex.setAttribute("content", obj.author);
-  head.appendChild(authorIndex);
   const galleryClass = document.querySelector(".gallery");
   galleryClass.textContent = obj.author;
-
-  const descriptionIndex = document.createElement( "meta" );
-  const ogDescription = document.createElement('meta');
-  descriptionIndex.setAttribute("name", "description");
-  ogDescription.setAttribute("property", "og:description");
-  descriptionIndex.setAttribute("content", `${obj.date} | ${obj.info}`);
-  ogDescription.setAttribute("content", `${obj.date} | ${obj.info}`);
-  head.appendChild(descriptionIndex);
-  head.appendChild(ogDescription);
   const dateClass = document.querySelector(".date");
   dateClass.textContent = obj.date;
   const infoClass = document.querySelector(".info");
   infoClass.textContent = obj.info;
 
-
-  const ogSite = document.createElement( "meta" );
-  const ogURL = document.createElement( "meta" );
-  ogSite.setAttribute("property", "og:site_name");
-  ogURL.setAttribute("property", "og:url");
-  ogSite.setAttribute("content", obj.url);
-  ogURL.setAttribute("content", obj.url);
-  head.appendChild(ogSite);
-  head.appendChild(ogURL);
-
-  const ogIMG = document.createElement( "meta" );
-  const twitterIMG = document.createElement( "meta" );
   const coverImage = document.querySelector('#images');
-  ogIMG.setAttribute("property", "og:image");
-  twitterIMG.setAttribute("name", "twitter:image");
-  ogIMG.setAttribute("content", `${obj.url}${obj.image}`);
-  twitterIMG.setAttribute("content", `${obj.url}${obj.image}`);
-  coverImage.style.backgroundImage = `${obj.url}${obj.image}`;
-  head.appendChild(ogIMG);
-  head.appendChild(twitterIMG);
+  coverImage.style.backgroundImage = obj.src;
+
+  const videoCover = document.querySelector( "#images video" );
+  const videoImage = document.createElement( "source" );
+  videoImage.setAttribute("type", "video/mp4");
+  videoImage.setAttribute("src", obj.video);
+  videoCover.appendChild(videoImage);
 }
 
 populate();

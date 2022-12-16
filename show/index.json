@@ -3,9 +3,9 @@
   "author" : "Gallery Your Name",
   "date" : "会期 : ___",
   "info" : "場所 : ___",
-  "site" : "___",
-  "page" : "/___/",
-  "cover" : "001.jpeg",
+  "src" : "001.jpeg",
+  "video" : "___",
+  
   "images" : [
     {
       "id" : "___",

@@ -68,9 +68,11 @@ function indexHead(obj) {
   const coverImage = document.querySelector('#images');
   coverImage.style.backgroundImage = 'url(' + obj.src + ')';
 
+  const videoCover = document.querySelector( "#images video" );
   const videoImage = document.createElement( "source" );
   videoImage.setAttribute("type", "video/mp4");
   videoImage.setAttribute("src", obj.video);
+  videoCover.appendChild(videoImage);
 }
 
 function indexShow(obj) {
