@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="stylesheet" href="icon.css" />
+  <link rel="stylesheet" href="parallax.css" />
+  <style>
+  main {
+    position: fixed;
+    width: 100%;
+  }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,600;0,700;1,600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main>
+    <div id="icon">
+      <h1>
+        <u>this is</u> a
+        <i>gallery</i> for
+        <b>valuing an act of valuing</b>
+      </h1>
+    </div>
+  </main>
+  <section id="parallax">
+    <span class="jpeg_001"></span>
+    <span class="jpeg_002"></span>
+    <span class="jpeg_003"></span>
+    <span class="jpeg_004"></span>
+    <span class="jpeg_005"></span>
+    <span class="jpeg_006"></span>
+  </section>
+
+  <footer id="footer">
+    <script>
+    document.write("<div>location.href " + location.href + "</div>");
+    document.write("<div>location.protocol " + location.protocol + "</div>");
+    document.write("<div>location.hostname " + location.hostname + "</div>");
+    document.write("<div>location.host " + location.host + "</div>");
+    document.write("<div>location.port " + location.port + "</div>");
+    document.write("<div>location.pathname " + location.pathname + "</div>");
+    document.write("<div>location.search " + location.search + "</div>");
+    document.write("<div>location.hash " + location.hash + "</div>");
+  </script>
+</footer>
+<script src="../index.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(window).bind('scroll',function(e){
+  parallaxScroll();
+});
+function parallaxScroll(){
+  var scrolled = $(window).scrollTop();
+  $('.jpeg_001').css('top', ( 25 - (scrolled * -.045) ) + 'vh');
+  $('.jpeg_002').css('top', ( 100 - (scrolled * -.025) ) + 'vh');
+  $('.jpeg_003').css('top', ( 200 - (scrolled * .111) ) + 'vh');
+  $('.jpeg_004').css('top', ( 275 - (scrolled * .075) ) + 'vh');
+  $('.jpeg_005').css('top', ( 250 - (scrolled * .095) ) + 'vh');
+  $('.jpeg_006').css('top', ( 275 - (scrolled * .05) ) + 'vh');
+};
+</script>
+
+<script type="text/javascript">
+jQuery(function() {
+  var appear = false;
+  var footer = $('#footer');
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 1250) {  //1250pxスクロールしたら
+      if (appear == false) {
+        appear = true;
+        footer.stop().animate({
+          'bottom': '0' //表示場所
+        }, 2500); //表示速度
+      }
+    } else {
+      if (appear) {
+        appear = false;
+        footer.stop().animate({
+          'bottom': '-100vh' //　隠す場所
+        }, 1500); //　隠す速度
+      }
+    }
+  });
+});
+</script>
+</body>
+
+</html>

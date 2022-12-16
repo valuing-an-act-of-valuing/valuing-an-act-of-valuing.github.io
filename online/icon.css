@@ -1,0 +1,43 @@
+#icon {
+  box-sizing: border-box;
+  margin: 2.5rem auto;
+  width: 95%;
+  height: 75vh;
+  max-width: 550px;
+  max-height: 75vw;
+}
+
+#icon h1 {
+  font-size: 3rem;
+  font-family: 'Source Serif Pro', serif;
+  padding: 1rem 2.5rem 1rem 1rem;
+  letter-spacing: 0.1rem;
+}
+
+#icon b {
+  font-weight:900;
+}
+
+#icon u {
+  font-weight:600;
+}
+
+#icon i {
+  letter-spacing:0.15rem;
+}
+
+@media screen and (max-width: 750px) {
+
+  #icon {
+    margin: 5% auto;
+  }
+  
+  #icon h1 {
+    font-size: 7.5vw;
+    letter-spacing:0.25vw;
+  }
+
+  #icon i {
+    letter-spacing:0.5vw;
+  }
+}
