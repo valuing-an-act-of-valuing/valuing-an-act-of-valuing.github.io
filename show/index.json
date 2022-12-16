@@ -3,17 +3,5 @@
   "author" : "Gallery Your Name",
   "date" : "会期 : ___",
   "info" : "場所 : ___",
-  "src" : "001.jpeg",
-  "video" : "___",
-  
-  "images" : [
-    {
-      "id" : "___",
-      "src" : "___.jpg"
-    },
-    {
-      "id" : "___",
-      "src" : "___.jpg"
-    }
-  ]
+  "src" : "001.jpeg"
 }

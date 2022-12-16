@@ -9,9 +9,47 @@
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@pe_hu_" />
-  <link href="style.css" rel="stylesheet">
+  <link rel="icon" href="___">
+  <link rel="apple-touch-icon" href="___">
   <link href="../online/value.css" rel="stylesheet">
+  <style>
+  body {
+    background: #fff;
+  }
 
+  :root {
+    --main-font: 'Source Serif Pro', serif;
+    --sub-font: "YuGothic", "Yu Gothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    --bg-color: #eee5;
+    --text-color: #000;
+    --sub-color: red;
+  }
+
+  .other_app {
+    background: var(--bg-color);
+  }
+
+  #image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: blur(0);
+    -webkit-filter: blur(0);
+  }
+
+  video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -2;
+  }
+  </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,600;0,700;1,600&display=swap" rel="stylesheet">
@@ -22,19 +60,47 @@
     <p>本文</p>
   </div>
 
-  <section id="images">
-    <video webkit-playsinline playsinline muted autoplay loop></video>
-  </section>
-
   <div class="other_app">
     <u class="date"></u><br/>
     <b class="title"></b>
     <p class="info"></p>
+    <p>text here</p>
+    <br/>
+    <span class="gallery"></span>
   </div>
 
-  <div class="en_app">
-    <u class="gallery"></u>
-  </div>
+  <video webkit-playsinline playsinline muted autoplay loop>
+    <source src="" type="video/mp4"></source>
+    <source src="" type="video/webm"></source>
+  </video>
+
+  <section id="image"></section>
+
+  <script>
+  var random = [
+    "001.jpeg",
+    "002.jpeg",
+    "003.jpeg",
+    "004.jpeg",
+    "005.jpeg",
+    "006.jpeg"
+  ];
+
+  function randomImg(randomArray) {
+    let random =
+    randomArray[Math.floor(Math.random() * randomArray.length)];
+    console.log(random);
+    return random;
+  }
+
+  function backgroundImage() {
+    let images = document.querySelector("#image");
+    images.style.backgroundImage = `url(${randomImg(random)})`;
+  }
+  window.setInterval(function() {
+    backgroundImage();
+  }, 1000);
+  </script>
 
   <div id="what"><b></b></div>
   <a class="back" href="#" onclick="window.history.back(); return false;">↩︎</a>

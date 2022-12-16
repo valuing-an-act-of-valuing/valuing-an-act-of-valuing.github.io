@@ -7,7 +7,8 @@
 }
 
 #value .ja_app::before {
-  content: 'Topics';
+  content: 'Index';
+  text-decoration: overline;
   display: block;
   font-size: 125%;
   position: absolute;

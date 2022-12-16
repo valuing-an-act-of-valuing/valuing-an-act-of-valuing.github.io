@@ -126,8 +126,6 @@
   background-size: 75%;
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  position: relative;
-  z-index: 10;
   width: 75vw;
   height: 75vh;
   filter: blur(0.5rem);
