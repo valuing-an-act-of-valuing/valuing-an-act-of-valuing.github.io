@@ -44,17 +44,23 @@
   </section>
 
   <footer id="footer" onclick="window.history.back(); return false;">
-    <script>
-    document.write("<div>location.href <b>" + location.href + "</b></div>");
-    document.write("<div>location.protocol <b>" + location.protocol + "</b></div>");
-    document.write("<div>location.hostname <b>" + location.hostname + "</b></div>");
-    document.write("<div>location.host <b>" + location.host + "</b></div>");
-    document.write("<div>location.port <b>" + location.port + "</b></div>");
-    document.write("<div>location.pathname <b>" + location.pathname + "</b></div>");
-    document.write("<div>location.search <b>" + location.search + "</b></div>");
-    document.write("<div>location.hash <b>" + location.hash + "</b></div>");
-  </script>
-</footer>
+    <div></div>
+  </footer>
+  <script>
+  let footer = document.querySelector('#footer div');
+
+  let documentInfo =
+  'characterSet: <b>' + document.characterSet + '</b><br/>' +
+  'contentType: <b>' + document.contentType + '</b><br/>' +
+  'domain: <b>' + document.domain + '</b><br/>' +
+  'URL: <b>' + document.URL + '</b><br/>' +
+  'title: <b>' + document.title + '</b><br/>' +
+  'lastModified: <b>' + document.lastModified + '</b><br/>' +
+  'referrer: <b>' + document.referrer + '</b>';
+
+  footer.insertAdjacentHTML('afterend', documentInfo);
+</script>
+
 <script src="../index.js"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
