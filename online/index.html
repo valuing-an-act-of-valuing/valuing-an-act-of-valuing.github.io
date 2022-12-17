@@ -7,6 +7,15 @@
   <meta name="format-detection" content="telephone=no" />
   <link rel="stylesheet" href="title.css" />
   <link rel="stylesheet" href="parallax.css" />
+  <style>
+  :root {
+    --main-font: 'Source Serif Pro', serif;
+    --sub-font: "YuGothic", "Yu Gothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    --bg-color: forestgreen;
+    --main-color: #eee;
+    --sub-color: #111;
+  }
+  </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,600;0,700;1,600&display=swap" rel="stylesheet">
@@ -22,6 +31,7 @@
       </h1>
     </div>
   </main>
+  
   <section id="parallax">
     <span class="jpeg_001"></span>
     <span class="jpeg_002"></span>
@@ -47,48 +57,51 @@
     $('.jpeg_005').css('top', ( 250 - (scrolled * .095) ) + 'vh');
     $('.jpeg_006').css('top', ( 275 - (scrolled * .05) ) + 'vh');
   };
-</script>
+  </script>
 
-<footer id="footer" onclick="window.history.back(); return false;">
-  <div></div>
-</footer>
-<script>
-let footer = document.querySelector('#footer div');
+  <a class="back" href="#" onclick="window.history.back(); return false;">↩︎</a>
 
-let documentInfo =
-'characterSet: <b>' + document.characterSet + '</b><br/>' +
-'contentType: <b>' + document.contentType + '</b><br/>' +
-'domain: <b>' + document.domain + '</b><br/>' +
-'URL: <b>' + document.URL + '</b><br/>' +
-'referrer: <b>' + document.referrer + '</b><br/>' +
-'lastModified: <b>' + document.lastModified + '</b>';
+  <footer id="footer">
+    <div></div>
+  </footer>
 
-footer.insertAdjacentHTML('afterend', documentInfo);
-</script>
+  <script>
+  let footer = document.querySelector('#footer div');
 
-<script type="text/javascript">
-jQuery(function() {
-  var appear = false;
-  var footer = $('#footer');
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 500) {
-      if (appear == false) {
-        appear = true;
-        footer.stop().animate({
-          'bottom': '0' //表示場所
-        }, 2500); //表示速度
+  let documentInfo =
+  'characterSet: <b>' + document.characterSet + '</b><br/>' +
+  'contentType: <b>' + document.contentType + '</b><br/>' +
+  'domain: <b>' + document.domain + '</b><br/>' +
+  'URL: <b>' + document.URL + '</b><br/>' +
+  'referrer: <b>' + document.referrer + '</b><br/>' +
+  'lastModified: <b>' + document.lastModified + '</b>';
+
+  footer.insertAdjacentHTML('afterend', documentInfo);
+  </script>
+
+  <script type="text/javascript">
+  jQuery(function() {
+    var appear = false;
+    var footer = $('#footer');
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > 500) {
+        if (appear == false) {
+          appear = true;
+          footer.stop().animate({
+            'bottom': '0' //表示場所
+          }, 2500); //表示速度
+        }
+      } else {
+        if (appear) {
+          appear = false;
+          footer.stop().animate({
+            'bottom': '-100vh' //　隠す場所
+          }, 1500); //　隠す速度
+        }
       }
-    } else {
-      if (appear) {
-        appear = false;
-        footer.stop().animate({
-          'bottom': '-100vh' //　隠す場所
-        }, 1500); //　隠す速度
-      }
-    }
+    });
   });
-});
-</script>
+  </script>
 </body>
 
 </html>
