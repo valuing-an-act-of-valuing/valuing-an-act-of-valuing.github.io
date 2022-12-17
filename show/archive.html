@@ -1,233 +1,76 @@
+<!DOCTYPE html>
 <html lang="ja">
 
 <head>
-    <title>Gallery Your Name</title>
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="author" content="Your Name">
-    <meta name="description" content="this is a gallery for value an act of valuing">
-
-    <meta property="og:title" content="Gallery Your Name" />
-    <meta property="og:description" content="this is a gallery for value an act of valuing" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://creative-community.space/value/gallery/show/" />
-    <meta property="og:site_name" content="creative-community.space" />
-    <meta property="og:image" content="001.jpeg" />
-    <meta property="og:locale" content="ja_JP" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@NLC_update" />
-    <meta name="twitter:image" content="001.jpeg" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,600;0,700;1,600&display=swap" rel="stylesheet">
-    <link rel="icon" href="../about/000.png">
-    <style type="text/css">
-         :root {
-            --bg-color: #fff;
-            --text-color: #000;
-            --text-shadow: #fff 0.25vw 0.25vw 0.25vw;
-        }
-        
-        .date {
-            font-family: 'Source Serif Pro', serif;
-            font-size: 1rem;
-            position: absolute;
-            right: 0;
-            top: 5vh;
-            -ms-writing-mode: tb-rl;
-            writing-mode: vertical-rl;
-            color: var(--text-color);
-            text-shadow: #000 0.1vw 0.25vw 0.25vw;
-            animation: 2.5s linear infinite alternate logo;
-        }
-        
-        .cover {
-            background-image: url(001.jpeg);
-        }
-        
-        .a {
-            background-image: url(002.jpeg);
-        }
-        
-        .b {
-            background-image: url(003.jpeg);
-        }
-        
-        .c {
-            background-image: url(004.jpeg);
-        }
-        
-        .d {
-            background-image: url(005.jpeg);
-        }
-        
-        .e {
-            background-image: url(006.jpeg);
-        }
-        
-        body {
-            background: var(--bg-color);
-            color: var(--text-color);
-        }
-        
-        p.shadow {
-            text-shadow: var(--text-shadow);
-        }
-        
-        .value,
-        .en {
-            font-family: 'Source Serif Pro', serif;
-            line-height: 200%;
-        }
-        
-        .en span {
-            color: #000;
-            background: #fff;
-            padding: 0.25vw 0 0;
-        }
-        
-        .en u {
-            text-shadow: var(--text-shadow);
-        }
-        
-        .value {
-            font-size: 2.5rem;
-            width: 90%;
-            height: 65vh;
-            text-shadow: var(--text-shadow);
-        }
-        
-        .info i {
-            font-size: 110%;
-        }
-        
-        .info b {
-            font-weight: 900;
-            font-size: 120%;
-        }
-        
-        .link {
-            position: fixed;
-            bottom: 1rem;
-            left: 2.5vw;
-            font-size: 2.5rem;
-        }
-        
-        .link a {
-            text-decoration: none;
-            color: var(--text-color);
-        }
-        
-        #open {
-            opacity: 1;
-            position: absolute;
-            z-index: 100;
-            font-size: 1rem;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            text-decoration: none;
-        }
-        
-        #open span {
-            display: inline-block;
-            color: #fff;
-            font-weight: 555;
-            font-family: 'Source Serif Pro', serif;
-            animation: 2.5s linear infinite alternate gallery;
-        }
-        
-        @keyframes logo {
-            from {
-                filter: invert(0);
-            }
-            to {
-                filter: invert(1);
-            }
-        }
-        
-        @keyframes gallery {
-            from {
-                filter: invert(1);
-            }
-            to {
-                filter: invert(0);
-            }
-        }
-        
-        @media screen and (max-width: 1100px) {
-            .value {
-                font-size: 1rem;
-                text-shadow: var(--text-shadow);
-            }
-        }
-    </style>
-
-    <link rel="stylesheet" href="https://creative-community.space/value/scrollable.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@pe_hu_" />
+  <link rel="icon" href="___">
+  <link rel="apple-touch-icon" href="___">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../scrollable.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,600;0,700;1,600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <ul class="mousedragscrollable library">
-        <li class="cover">
-            <p class="date">大切にすることを大切にするためのギャラリー</p>
-            <div class="contents">
-                <div class="value">
-                    <h1 class="info">
-                        <b>Gallery Your Name</b>
-                    </h1>
-                </div>
-                <p class="center en">
-                    <span>date</span>
-                </p>
-                <p class="center en">
-                    <span>by</span>
-                    <span>appointment only</span>
-                </p>
-            </div>
-        </li>
-        
-        <li>
-            <div class="contents">
-                <h2 class="en"><u>Sub Title</u></h2>
-                <p class="en shadow">
-                    Text
-                    <br/>Text
-                </p>
-            </div>
-        </li>
-        
-        <li class="a"></li>
-        <li class="b"></li>
-        <li class="c"></li>
-        <li class="d"></li>
+  <ul class="mousedragscrollable">
+    <li id="image">
+      <h1 id="what" class="tt"><b></b></h1>
+      <p class="date"></p>
+      <p class="bottom" style="text-align: center;">
+        <span class="info"></span>
+      </p>
+    </li>
 
-        <li>
-            <div class="contents">
-                <a id="open" href="index.html" target="_parent">
-                    <span>Gallery Your Name</span>
-                </a>
-            </div>
-        </li>
-        
-        <li class="e"></li>
-    </ul>
-    <p class="link noprint ">
-        <a href="#" onclick="window.history.back(); return false;">↩︎</a>
-    </p>
+    <li>
+      <h2 class="center">H2.center</h2>
+      <div class="bottom">
+        <p>.bottom p</p>
+        <p class="main">.bottom p.main</p>
+      </div>
+    </li>
+
+    <li class="jpeg_002"></li>
+    <li class="jpeg_003"></li>
+    <li class="jpeg_004"></li>
+
+    <li class="jpeg_005">
+      <div class="top">
+        <p>.top p</p>
+        <p class="main">.top p.main</p>
+      </div>
+      <div class="center" style="text-align: left;">
+        <p><u class="gallery"></u></p>
+        <h3 class="sub title"></h3>
+      </div>
+      <div id="credit" class="bottom sub" style="text-align:center;">
+        <p></p>
+      </div>
+      <script>
+      let credit = document.querySelector('#credit p');
+
+      let creditInfo =
+      '<span>' + location.hostname + location.pathname + '</span>';
+
+      credit.insertAdjacentHTML('afterend', creditInfo);
+      </script>
+    </li>
+
+    <li class="jpeg_006"></li>
+  </ul>
+
+  <script src="../show.js"></script>
+
+  <a id="back" href="#" onclick="window.history.back(); return false;">↩︎</a>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="../scrollable.js"></script>
 </body>
-
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-<script src="https://creative-community.space/value/scrollable.js"></script>
-<script>
-    $(".mousedragscrollable").mousedragscrollable();
-</script>
 
 </html>

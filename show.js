@@ -63,8 +63,8 @@ function indexHeader(obj) {
   const infoClass = document.querySelector(".info");
   infoClass.textContent = obj.info;
 
-  const coverImage = document.querySelector('#images');
-  coverImage.style.backgroundImage = obj.src;
+  const coverImage = document.querySelector('#image');
+  coverImage.style.backgroundImage = `url(${obj.src})`;
 }
 
 populate();

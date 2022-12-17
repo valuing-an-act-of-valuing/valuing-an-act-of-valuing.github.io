@@ -75,10 +75,6 @@ a {
   text-decoration: none;
 }
 
-body {
-  background: var(--bg-color);
-}
-
 #link {
   -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl;

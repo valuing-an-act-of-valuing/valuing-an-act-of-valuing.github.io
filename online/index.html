@@ -15,6 +15,11 @@
     --main-color: #eee;
     --sub-color: #111;
   }
+
+  main {
+    position: fixed;
+    width: 100%;
+  }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +27,7 @@
 </head>
 
 <body>
-  <main style="position: fixed; width: 100%;">
+  <main>
     <div id="title">
       <h1>
         <u>this is</u> a
@@ -31,7 +36,7 @@
       </h1>
     </div>
   </main>
-  
+
   <section id="parallax">
     <span class="jpeg_001"></span>
     <span class="jpeg_002"></span>
@@ -40,8 +45,6 @@
     <span class="jpeg_005"></span>
     <span class="jpeg_006"></span>
   </section>
-
-  <script src="../index.js"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
@@ -58,8 +61,6 @@
     $('.jpeg_006').css('top', ( 275 - (scrolled * .05) ) + 'vh');
   };
   </script>
-
-  <a class="back" href="#" onclick="window.history.back(); return false;">↩︎</a>
 
   <footer id="footer">
     <div></div>
@@ -102,6 +103,11 @@
     });
   });
   </script>
+
+  <script src="../index.js"></script>
+
+  <a class="back" href="#" onclick="window.history.back(); return false;">↩︎</a>
+
 </body>
 
 </html>

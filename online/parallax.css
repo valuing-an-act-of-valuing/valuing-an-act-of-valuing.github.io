@@ -60,8 +60,8 @@ body,
 
 #parallax span {
   position: absolute;
-  width: 55vw;
-  height: 55vw;
+  width: 50vw;
+  height: 50vh;
   padding-bottom: 50vh;
   max-width: 500px;
   max-height: 500px;

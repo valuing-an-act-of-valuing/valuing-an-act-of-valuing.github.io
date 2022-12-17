@@ -11,18 +11,18 @@
   <meta name="twitter:site" content="@pe_hu_" />
   <link rel="icon" href="___">
   <link rel="apple-touch-icon" href="___">
-  <link href="../online/value.css" rel="stylesheet">
+  <link rel="stylesheet" href="../online/value.css" />
   <style>
-  body {
-    background: #fff;
-  }
-
   :root {
     --main-font: 'Source Serif Pro', serif;
     --sub-font: "YuGothic", "Yu Gothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
-    --bg-color: #eee5;
-    --text-color: #000;
+    --bg-color: #ccc5;
+    --text-color: #111;
     --sub-color: red;
+  }
+
+  body {
+    background: #eee;
   }
 
   .other_app {
@@ -34,6 +34,7 @@
   }
 
   .other_app .info {
+    font-style: italic;
     margin: 0.25rem 0 1.5rem;
   }
 
@@ -42,8 +43,6 @@
     top: 0;
     left: 0;
     z-index: -1;
-    filter: blur(0);
-    -webkit-filter: blur(0);
   }
 
   video {
@@ -58,6 +57,7 @@
     z-index: -2;
   }
   </style>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,600;0,700;1,600&display=swap" rel="stylesheet">
@@ -82,7 +82,7 @@
     <source src="" type="video/webm"></source>
   </video>
 
-  <section id="image"></section>
+  <section id="image" style="filter: blur(0); -webkit-filter: blur(0);"></section>
 
   <script>
   var random = [
@@ -113,7 +113,7 @@
   <div id="what"><b></b></div>
   <a class="back" href="#" onclick="window.history.back(); return false;">↩︎</a>
 
-  <script src="index.js"></script>
+  <script src="../show.js"></script>
 </body>
 
 </html>
