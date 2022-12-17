@@ -1,9 +1,16 @@
 :root {
   --main-font: 'Source Serif Pro', serif;
   --sub-font: "YuGothic", "Yu Gothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
-  --bg-color: green;
+  --bg-color: #eee;
   --text-color: #111;
   --sub-color: #fff7;
+  --tt-shadow:
+  0.1vw 0.1vw 0 #fff,
+  0.2vw 0.2vw 0 #fff,
+  0.3vw 0.3vw 0 #fff;
+  --text-shadow:
+  1px 1px 0 #fff,
+  2px 2px 0 #fff;
 }
 
 #image {
@@ -38,7 +45,7 @@
 .jpeg_006 {
   background-image: url(006.jpeg);
   background-position: 50% 50%;
-  background-size: cover;
+  background-size: 90%;
 }
 
 .mousedragscrollable h1,
@@ -52,40 +59,10 @@
   font-family: var(--sub-font);
 }
 
-.mousedragscrollable .title {
-  letter-spacing: 0.1rem;
+.mousedragscrollable .tt {
+  text-shadow: var(--tt-shadow);
 }
 
-.mousedragscrollable .title i {
-  letter-spacing: 0.125rem;
-}
-
-.mousedragscrollable .title b {
-  font-weight: 900;
-}
-
-.mousedragscrollable .title u {
-  font-weight: 600;
-}
-
-@media screen and (max-width: 750px) {
-
-  .mousedragscrollable .title {
-    letter-spacing:0.125vw;
-  }
-
-  .mousedragscrollable .title i {
-    letter-spacing:0.2vw;
-  }
-}
-
-@media screen and (max-width: 550px) {
-
-  .mousedragscrollable .title {
-    letter-spacing:0.25vw;
-  }
-
-  .mousedragscrollable .title i {
-    letter-spacing:0.45vw;
-  }
+.mousedragscrollable .shadow {
+  text-shadow: var(--text-shadow);
 }
