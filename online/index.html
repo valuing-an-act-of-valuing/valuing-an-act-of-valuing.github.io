@@ -5,28 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no" />
-  <link rel="stylesheet" href="icon.css" />
+  <link rel="stylesheet" href="title.css" />
   <link rel="stylesheet" href="parallax.css" />
-  <style>
-  main {
-    position: fixed;
-    width: 100%;
-  }
-
-  #footer:hover {
-    cursor: pointer;
-    background: #0009;
-    color: #fff;
-  }
-  </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,600;0,700;1,600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <main>
-    <div id="icon">
+  <main style="position: fixed; width: 100%;">
+    <div id="title">
       <h1>
         <u>this is</u> a
         <i>gallery</i> for
@@ -43,40 +31,39 @@
     <span class="jpeg_006"></span>
   </section>
 
-  <footer id="footer" onclick="window.history.back(); return false;">
-    <div></div>
-  </footer>
-  <script>
-  let footer = document.querySelector('#footer div');
+  <script src="../index.js"></script>
 
-  let documentInfo =
-  'characterSet: <b>' + document.characterSet + '</b><br/>' +
-  'contentType: <b>' + document.contentType + '</b><br/>' +
-  'domain: <b>' + document.domain + '</b><br/>' +
-  'URL: <b>' + document.URL + '</b><br/>' +
-  'title: <b>' + document.title + '</b><br/>' +
-  'lastModified: <b>' + document.lastModified + '</b><br/>' +
-  'referrer: <b>' + document.referrer + '</b>';
-
-  footer.insertAdjacentHTML('afterend', documentInfo);
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+  $(window).bind('scroll',function(e){
+    parallaxScroll();
+  });
+  function parallaxScroll(){
+    var scrolled = $(window).scrollTop();
+    $('.jpeg_001').css('top', ( 25 - (scrolled * -.045) ) + 'vh');
+    $('.jpeg_002').css('top', ( 100 - (scrolled * -.025) ) + 'vh');
+    $('.jpeg_003').css('top', ( 200 - (scrolled * .111) ) + 'vh');
+    $('.jpeg_004').css('top', ( 275 - (scrolled * .075) ) + 'vh');
+    $('.jpeg_005').css('top', ( 250 - (scrolled * .095) ) + 'vh');
+    $('.jpeg_006').css('top', ( 275 - (scrolled * .05) ) + 'vh');
+  };
 </script>
 
-<script src="../index.js"></script>
+<footer id="footer" onclick="window.history.back(); return false;">
+  <div></div>
+</footer>
+<script>
+let footer = document.querySelector('#footer div');
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript">
-$(window).bind('scroll',function(e){
-  parallaxScroll();
-});
-function parallaxScroll(){
-  var scrolled = $(window).scrollTop();
-  $('.jpeg_001').css('top', ( 25 - (scrolled * -.045) ) + 'vh');
-  $('.jpeg_002').css('top', ( 100 - (scrolled * -.025) ) + 'vh');
-  $('.jpeg_003').css('top', ( 200 - (scrolled * .111) ) + 'vh');
-  $('.jpeg_004').css('top', ( 275 - (scrolled * .075) ) + 'vh');
-  $('.jpeg_005').css('top', ( 250 - (scrolled * .095) ) + 'vh');
-  $('.jpeg_006').css('top', ( 275 - (scrolled * .05) ) + 'vh');
-};
+let documentInfo =
+'characterSet: <b>' + document.characterSet + '</b><br/>' +
+'contentType: <b>' + document.contentType + '</b><br/>' +
+'domain: <b>' + document.domain + '</b><br/>' +
+'URL: <b>' + document.URL + '</b><br/>' +
+'referrer: <b>' + document.referrer + '</b><br/>' +
+'lastModified: <b>' + document.lastModified + '</b>';
+
+footer.insertAdjacentHTML('afterend', documentInfo);
 </script>
 
 <script type="text/javascript">

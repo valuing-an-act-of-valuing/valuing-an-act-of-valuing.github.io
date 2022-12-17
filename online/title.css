@@ -1,0 +1,48 @@
+body {
+  background-color: #fff;
+  color: #000;
+  font-family: 'Source Serif Pro', serif;
+}
+
+#title h1 {
+  font-size: 3rem;
+  padding: 1rem 2.5rem 1rem 1rem;
+  letter-spacing: 0.1rem;
+}
+
+#title b {
+  font-weight:900;
+}
+
+#title u {
+  font-weight:600;
+}
+
+#title i {
+  letter-spacing:0.15rem;
+}
+
+#title {
+  box-sizing: border-box;
+  margin: 2.5rem auto;
+  width: 95%;
+  height: 75vh;
+  max-width: 550px;
+  max-height: 75vw;
+}
+
+@media screen and (max-width: 750px) {
+
+  #title h1 {
+    font-size: 7.5vw;
+    letter-spacing:0.25vw;
+  }
+
+  #title i {
+    letter-spacing:0.5vw;
+  }
+
+  #title {
+    margin: 5% auto;
+  }
+}

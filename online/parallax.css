@@ -12,7 +12,6 @@ body,
 }
 
 #footer {
-  font-family: 'Source Serif Pro', serif;
   position: fixed;
   z-index: 100;
   bottom:-100vh;
