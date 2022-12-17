@@ -82,7 +82,6 @@ function indexShow(obj) {
   for (let i = 0; i < shows.length; i++) {
     const showP = document.createElement('p');
     const showSpan = document.createElement('span');
-    const showBR = document.createElement('br');
     const showA = document.createElement('a');
     const showI = document.createElement('I');
 
@@ -92,7 +91,6 @@ function indexShow(obj) {
     showI.textContent = shows[i].info;
 
     showP.appendChild(showSpan);
-    showP.appendChild(showBR);
     showP.appendChild(showA);
     showP.appendChild(showI);
 
@@ -111,12 +109,14 @@ function indexArc(obj) {
     const arcH3 = document.createElement('h3');
     const arcU = document.createElement('u');
     const arcA = document.createElement('a');
+    const arcBR = document.createElement('br');
 
     arcU.textContent = archive[i].date;
     arcA.href = archive[i].href;
     arcA.textContent = archive[i].name;
 
     arcH3.appendChild(arcU);
+    arcH3.appendChild(arcBR);
     arcH3.appendChild(arcA);
 
     arcDiv.appendChild(arcH3);
