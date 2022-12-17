@@ -82,6 +82,7 @@ function indexShow(obj) {
   for (let i = 0; i < shows.length; i++) {
     const showP = document.createElement('p');
     const showSpan = document.createElement('span');
+    const showBR = document.createElement('br');
     const showA = document.createElement('a');
     const showI = document.createElement('I');
 
@@ -91,6 +92,7 @@ function indexShow(obj) {
     showI.textContent = shows[i].info;
 
     showP.appendChild(showSpan);
+    showP.appendChild(showBR);
     showP.appendChild(showA);
     showP.appendChild(showI);
 
