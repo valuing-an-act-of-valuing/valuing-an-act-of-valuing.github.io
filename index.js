@@ -57,8 +57,8 @@ function indexHead(obj) {
   const twitterIMG = document.createElement( "meta" );
   ogIMG.setAttribute("property", "og:image");
   twitterIMG.setAttribute("name", "twitter:image");
-  ogIMG.setAttribute("content", location.protocol + '//' + location.hostname + '/' + obj['src']);
-  twitterIMG.setAttribute("content", location.protocol + '//' + location.hostname + '/' + obj['src']);
+  ogIMG.setAttribute("content", location.origin + '/' + obj.src);
+  twitterIMG.setAttribute("content", location.origin + '/' + obj.src);
   head.appendChild(ogIMG);
   head.appendChild(twitterIMG);
 
