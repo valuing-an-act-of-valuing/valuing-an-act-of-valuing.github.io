@@ -8,7 +8,6 @@
 
 #value .ja_app::before {
   content: 'Index';
-  text-decoration: overline;
   display: block;
   font-size: 125%;
   position: absolute;
@@ -25,6 +24,10 @@
 #value .other_app {
   text-shadow:
   -1px 1px 0 #fff;
+}
+
+#link:hover {
+  border-left: 1px #fff solid;
 }
 
 a,
@@ -76,12 +79,14 @@ a {
 }
 
 #link {
+  font-family: var(--sub-font);
   -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl;
 }
 
 #enter b {
-  font-size: 1.75rem;
+  display: block;
+  font-size: 2rem;
   font-weight: 500;
 }
 
@@ -120,7 +125,7 @@ a {
 #value {
   height: 0;
   opacity: 0;
-  overflow: hidden;
+  overflow: hidden;;
   pointer-events: none;
   user-select: none;
   z-index: 0;
@@ -136,10 +141,10 @@ a {
 }
 
 #value .ja_app a {
+  background: var(--bg-color);
   font-size: 175%;
   padding: 0.25rem;
   margin-bottom: 0.5rem;
-  background: var(--bg-color);
 }
 
 #value .en_app p:last-child {
@@ -250,8 +255,4 @@ a {
   opacity: 0;
   pointer-events: none;
   user-select: none;
-}
-
-#link:hover {
-  border-left: 1px #fff solid;
 }
