@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="format-detection" content="telephone=no" />
+  <script src="mould/index.js"></script>
+  <script>
+    const urlHash = location.hash;
+    let hash = urlHash.replace('#', '');
+    if (hash === 'all') {
+      //
+    } else if (hash) {
+      //
+    } else {
+      indexJSON('index.json');
+    }
+  </script>
+
+  <!--og:meta-->
+  <meta content="website" property="og:type">
+  <title>大切にすることを大切にするためのギャラリー</title>
+  <meta content="this is a gallery for valuing an act of valuing" property="og:title">
+  <meta content="この小さなショーケースは、あなたが大切にするものを大切に展示するためのギャラリーです。" name="description">
+  <meta content="size: 65 × 65 × 65 mm (inside: 59 × 59 × 59 mm)" name="og:description">
+
+  <!--for Twitter-->
+  <meta content="summary_large_image" name="twitter:card">
+  <meta content="https://valuing-an-act-of-valuing.github.io" property="og:url">
+  <meta content="https://valuing-an-act-of-valuing.github.io/mould/img/card.jpeg" property="og:image">
+  <meta content="https://valuing-an-act-of-valuing.github.io/mould/img/card.jpeg" name="twitter:image:src">
+
+  <!--Icons-->
+  <link rel="icon" href="mould/img/icon.png">
+  <link rel="icon" href="mould/img/icon.png" sizes="192x192">
+  <link rel="apple-touch-icon-precomposed" href="mould/img/icon.png" sizes="180x180">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,600;0,700;1,600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="mould/style.css">
+  <link rel="stylesheet" href="mould/index.css">
+  <style>
+    :root {
+      --main-font: 'Source Serif Pro', serif;
+      --sub-font: "YuGothic", "Yu Gothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+      --font-size: 16px;
+      --text-color: #000;
+      --text-shadow: 0.1rem 0.1rem 0 #fff;
+      --sub-color: #fff;
+      --bg-color: #eee;
+    }
+
+    main h1 img {
+      max-width: 100%;
+    }
+
+    .enter main h1 img {
+      max-height: 3.21rem;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1 class="main shadow">
+      <i>this is</i> a
+      <u>gallery</u> for
+      valuing an act of valuing
+      <!-- <img src="img/icon.png" alt="大切にすることを大切にするためのギャラリー"> -->
+    </h1>
+    <h2 class="vertical"></h2>
+
+    <div id="show" class="shadow vertical"></div>
+    <div id="readme" class="main shadow"></div>
+  </main>
+</body>
+
+</html>
