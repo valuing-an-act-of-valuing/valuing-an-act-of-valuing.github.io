@@ -106,12 +106,24 @@ h1:hover {
         width: auto;
         height: 100%;
     }
+
+    main {
+        background-size: auto 85%;
+        background-position: bottom 2.5rem left 2.5rem;
+        background-repeat: no-repeat;
+    }
 }
 
 @media (orientation: portrait) {
     main video {
         width: 100%;
         height: auto;
+    }
+
+    main {
+        background-size: 85% auto;
+        background-position: bottom 10% left 20%;
+        background-repeat: no-repeat;
     }
 }
 

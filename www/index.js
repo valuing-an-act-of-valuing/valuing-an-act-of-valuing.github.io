@@ -25,6 +25,20 @@ function indexGallery(obj) {
     const h2 = document.querySelector('main h2')
     h2.textContent = document.querySelector('title').textContent
 
+    if (obj.img) {
+        let i = 0
+        main.style.backgroundImage = `url(${obj.img[i]})`
+
+        window.setInterval(function () {
+            if (i === obj.img.length - 1) {
+                i = 0
+            } else if (i => obj.img.length - 1) {
+                i++
+            }
+            main.style.backgroundImage = `url(${obj.img[i]})`
+        }, 2022);
+    }
+
     if (obj.video) {
         let ii = 0
         const video = document.createElement('video')
@@ -81,12 +95,12 @@ function indexShow(obj) {
         show.appendChild(ul)
 
         const showAll = obj.show
-        showAll.forEach((i) => {
+        showAll.forEach((iii) => {
             const li = document.createElement('li')
             li.innerHTML = `
-            <time>${i.date}</time><br/>
-            <a href="${i.link}">${i.title}</a>
-            <p>${i.description}</p>
+            <time>${iii.date}</time><br/>
+            <a href="${iii.link}">${iii.title}</a>
+            <p>${iii.description}</p>
             `
             ul.appendChild(li)
         })
