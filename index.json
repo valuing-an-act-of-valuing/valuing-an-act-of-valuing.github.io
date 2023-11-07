@@ -1,9 +1,9 @@
 {
     "readme": "README.md",
     "video": [
-        "mould/video/000.mp4"
+        "www/video/000.mp4"
     ],
-    "poster": "mould/img/card.jpeg",
+    "poster": "www/img/card.jpeg",
     "show": [
         {
             "date": "Mobile Based",

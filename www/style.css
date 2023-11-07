@@ -17,6 +17,10 @@ body {
     font-family: var(--main-font);
 }
 
+.sub {
+    font-family: var(--sub-font);
+}
+
 .shadow {
     color: var(--text-color);
     text-shadow: var(--text-shadow);

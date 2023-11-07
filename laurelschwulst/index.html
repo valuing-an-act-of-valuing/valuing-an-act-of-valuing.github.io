@@ -5,6 +5,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="format-detection" content="telephone=no" />
+  <script src="../www/index.js"></script>
+  <script>
+    const urlHash = location.hash;
+    let hash = urlHash.replace('#', '')
+    if (hash === 'all') {
+      //
+    } else if (hash) {
+      //
+    } else {
+      indexJSON('index.json')
+    }
+  </script>
 
   <!--og:meta-->
   <meta content="website" property="og:type">
@@ -29,7 +41,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,600;0,700;1,600&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="../mould/style.css">
+  <link rel="stylesheet" href="../www/style.css">
 
   <style>
     :root {
@@ -44,8 +56,11 @@
   </style>
 </head>
 
-<body>
+<body class="enter">
   <main>
+    <h1>Gallery Laurel Schwulst</h1>
+    <h2 class="vertical"></h2>
+    <div id="readme" class="main shadow"></div>
   </main>
 </body>
 

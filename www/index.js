@@ -90,6 +90,5 @@ function indexShow(obj) {
             `
             ul.appendChild(li)
         })
-
     }
 }
