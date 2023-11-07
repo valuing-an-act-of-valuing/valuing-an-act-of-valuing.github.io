@@ -3,6 +3,7 @@
     "video": [
         "mould/video/000.mp4"
     ],
+    "poster": "mould/img/card.jpeg",
     "show": [
         {
             "date": "Mobile Based",

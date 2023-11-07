@@ -19,13 +19,9 @@ async function fetchMD(url = '', query = '') {
 
 function indexGallery(obj) {
     fetchMD(obj.readme, '#readme')
-    
+
     const main = document.querySelector('main')
     const h1 = document.querySelector('main h1')
-    h1.addEventListener('click', function () {
-        document.body.classList.toggle('enter')
-    }, false)
-
     const h2 = document.querySelector('main h2')
     h2.textContent = document.querySelector('title').textContent
 
@@ -38,12 +34,23 @@ function indexGallery(obj) {
             video.muted = true
             video.setAttribute('muted', 'true')
             video.setAttribute('playsinline', 'true')
+            video.setAttribute('poster', obj.poster)
         }
 
         const source = document.createElement('source')
         source.setAttribute("type", "video/mp4")
         source.src = obj.video[ii]
         video.appendChild(source)
+        video.load()
+
+        h1.addEventListener('click', function () {
+            document.body.classList.toggle('enter')
+            if (document.body.className === "enter") {
+                video.play()
+            } else {
+                video.pause()
+            }
+        });
 
         video.addEventListener('ended', () => {
             if (obj.video.length === 0) {
@@ -59,9 +66,6 @@ function indexGallery(obj) {
             video.load()
             video.play()
         }, false)
-
-        video.load()
-        video.play()
     }
 }
 
