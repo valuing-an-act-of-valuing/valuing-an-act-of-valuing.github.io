@@ -1,21 +1,40 @@
 {
+    "description": [
+        "ギャラリーの前面にはあなたのギャラリー名を印字します。"
+    ],
     "readme": "README.md",
     "video": [
         "www/video/000.mp4"
     ],
     "poster": "www/img/card.jpeg",
-    "show": [
+    "index": [
         {
-            "date": "Mobile Based",
-            "title": "KN Gallery",
-            "link": "kn",
-            "description": "私は、この小さなギャラリーを持って色んな場所に滞在し、その時その場所にあったものをこのギャラリーに展示します。"
+            "subtitle": "仕様書",
+            "show": [
+                {
+                    "date": "GitHub",
+                    "title": "ウェブテンプレート",
+                    "link": "https://github.com/valuing-an-act-of-valuing/valuing-an-act-of-valuing.github.io",
+                    "description": ""
+                }
+            ]
         },
         {
-            "date": "New York, USA",
-            "title": "Gallery Laurel Schwulst",
-            "link": "laurelschwulst",
-            "description": "debuted in Green People, 2019 | moved into firefly sanctuary"
+            "subtitle": "ギャラリー・リスト",
+            "show": [
+                {
+                    "date": "Mobile Based",
+                    "title": "KN Gallery",
+                    "link": "kn",
+                    "description": "私は、この小さなギャラリーを持って色んな場所に滞在し、その時その場所にあったものをこのギャラリーに展示します。"
+                },
+                {
+                    "date": "New York, USA",
+                    "title": "Gallery Laurel Schwulst",
+                    "link": "laurelschwulst",
+                    "description": "debuted in Green People, 2019 | moved into firefly sanctuary"
+                }
+            ]
         }
     ]
 }

@@ -22,7 +22,7 @@
   <meta content="website" property="og:type">
   <title>大切にすることを大切にするためのギャラリー</title>
   <meta content="this is a gallery for valuing an act of valuing" property="og:title">
-  <meta content="この小さなショーケースは、あなたが大切にするものを大切に展示するためのギャラリーです。" name="description">
+  <meta content="この透明な小さな箱は、あなたが大切にするものを大切に展示するためのギャラリーです。" name="description">
   <meta content="size: 65 × 65 × 65 mm (inside: 59 × 59 × 59 mm)" name="og:description">
 
   <!--for Twitter-->
@@ -54,6 +54,11 @@
       --bg-color: #eee;
     }
 
+    main h1 {
+      width: 40vw;
+      max-width: 200px;
+    }
+
     main h1 img {
       max-width: 100%;
     }
@@ -70,12 +75,17 @@
       <i>this is</i> a
       <u>gallery</u> for
       valuing an act of valuing
-      <!-- <img src="img/icon.png" alt="大切にすることを大切にするためのギャラリー"> -->
+      <!--
+        <img src="img/icon.png" alt="大切にすることを大切にするためのギャラリー">
+      -->
     </h1>
     <h2 class="vertical"></h2>
 
-    <div id="show" class="shadow vertical"></div>
-    <div id="readme" class="main shadow"></div>
+    <div id="value" class="shadow vertical"></div>
+
+    <footer>
+      <div id="readme" class="main shadow"></div>
+    </footer>
   </main>
 </body>
 

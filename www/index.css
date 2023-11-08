@@ -17,44 +17,78 @@ main h1 {
 }
 
 .enter main h1,
-#show a {
+#value a {
     font-size: 111%;
 }
 
 main h2,
-#show h3,
-#show p,
+#value h3,
+#value p,
 #readme {
     font-size: 90%;
 }
 
-#show time {
-    font-family: var(--main-font);
+#value u,
+#value time {
     font-size: 75%;
 }
 
-#show p {
+#value time {
+    font-family: var(--main-font);
+}
+
+#value p,
+#value u {
     font-family: var(--sub-font);
 }
 
-#show a {
+#value a {
+    border-left: 0.1rem solid;
     display: inline-block;
     font-family: var(--main-font);
     margin-left: 0.25rem;
-    text-decoration: overline;
+    text-decoration: none;
+}
+
+#value u {
+    display: inline-block;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 0.25rem 0;
+    margin: 0 0.25rem;
+    text-decoration: none;
 }
 
 main h1,
-#show,
-#readme {
+#value,
+footer {
     transition: all 2.5s;
 }
 
-main h1 {
-    padding: 0.25rem;
+main h1,
+footer div {
+    padding: 0.5rem;
     margin: 0;
+}
+
+#value p {
+    padding: 0;
+    margin: 0;
+}
+
+#value ul {
+    padding: 0 1.5rem;
+    margin: 0;
+}
+
+#value h3,
+#value ul li {
+    padding: 0 0.5rem;
+    margin: 0;
+}
+
+main h1 {
     z-index: 100;
-    width: 200px;
 }
 
 main video {
@@ -70,15 +104,17 @@ h1:hover {
     cursor: pointer;
 }
 
-#show {
+#value {
     place-self: start center;
     font-size: 0%;
     padding: 4.5rem 4.5rem 1rem 4.5rem;
+    margin-bottom: 0.5rem;
     width: 100%;
     max-width: 1250px;
+    overflow: auto;
 }
 
-.enter #show {
+.enter #value {
     font-size: 100%;
     height: auto;
 }
@@ -88,15 +124,11 @@ h1:hover {
         font-size: 3.21vw;
     }
 
-    main h1 {
-        width: 40vw;
+    #value {
+        padding: 12.5% 12.5% 1rem 0.5rem;
     }
 
-    #show {
-        padding: 12.5% 10% 1rem 0.5rem;
-    }
-
-    .enter #show {
+    .enter #value {
         min-height: 50vw;
     }
 }
@@ -108,7 +140,7 @@ h1:hover {
     }
 
     main {
-        background-size: auto 85%;
+        background-size: auto 80%;
         background-position: bottom 2.5rem left 2.5rem;
         background-repeat: no-repeat;
     }
@@ -131,11 +163,12 @@ h1:hover {
     top: 0;
     left: 0;
     width: 100%;
+    max-width: 100%;
     transform: translate(-0%, -0%);
 }
 
-#show,
-#readme {
+#value,
+footer {
     position: relative;
     z-index: 1;
 }
@@ -149,39 +182,31 @@ main h2 {
     z-index: 1;
 }
 
-#show ul {
+@media print {
+    main h2 {
+        word-break: keep-all;
+        height: 100%;
+    }
+}
+
+#value ul {
     list-style: none inside;
 }
 
-#readme {
-    padding: 0.5rem;
-}
-
-#show ul li {
-    padding: 0 0.5rem;
-    margin: 0;
-}
-
-#show ul,
-#show ul li p {
-    padding: 0;
-    margin: 0;
-}
-
-#readme {
+footer {
     place-self: end;
     width: 100%;
 }
 
-#show,
-#readme {
+#value,
+footer {
     pointer-events: none;
     user-select: none;
     opacity: 0;
 }
 
-.enter #show,
-.enter #readme {
+.enter #value,
+.enter footer {
     pointer-events: auto;
     user-select: auto;
     opacity: 1;

@@ -6,7 +6,6 @@ async function indexJSON(requestURL) {
     const indexAll = await response.text()
     const json = JSON.parse(indexAll)
     indexGallery(json)
-    indexShow(json)
 }
 
 async function fetchMD(url = '', query = '') {
@@ -22,6 +21,11 @@ function indexGallery(obj) {
 
     const main = document.querySelector('main')
     const h1 = document.querySelector('main h1')
+
+    h1.addEventListener('click', function () {
+        document.body.classList.toggle('enter')
+    });
+
     const h2 = document.querySelector('main h2')
     h2.textContent = document.querySelector('title').textContent
 
@@ -58,7 +62,6 @@ function indexGallery(obj) {
         video.load()
 
         h1.addEventListener('click', function () {
-            document.body.classList.toggle('enter')
             if (document.body.className === "enter") {
                 video.play()
             } else {
@@ -81,28 +84,44 @@ function indexGallery(obj) {
             video.play()
         }, false)
     }
-}
 
-function indexShow(obj) {
-    if (obj.show) {
-        const show = document.querySelector('#show')
-        const h3 = document.createElement('h3')
+    const value = document.querySelector('#value')
+
+    if (obj.description) {
         const description = document.querySelector('meta[name="description"]').getAttribute('content')
+        const h3 = document.createElement('h3')
         h3.textContent = description
-        show.appendChild(h3)
+        value.appendChild(h3)
 
-        const ul = document.createElement('ul')
-        show.appendChild(ul)
+        const descriptionAll = obj.description
+        for (const eachP of descriptionAll) {
+            const p = document.createElement('p')
+            p.innerHTML = eachP
+            value.appendChild(p)
+        }
+    }
 
-        const showAll = obj.show
-        showAll.forEach((iii) => {
-            const li = document.createElement('li')
-            li.innerHTML = `
-            <time>${iii.date}</time><br/>
-            <a href="${iii.link}">${iii.title}</a>
-            <p>${iii.description}</p>
-            `
-            ul.appendChild(li)
-        })
+    if (obj.index) {
+        const indexAll = obj.index
+        for (const iii of indexAll) {
+            const ul = document.createElement('ul')
+            value.appendChild(ul)
+
+            const thisIndex = iii
+            const u = document.createElement('u')
+            u.textContent = thisIndex.subtitle
+            ul.appendChild(u)
+
+            const showAll = thisIndex.show
+            showAll.forEach((iiii) => {
+                const li = document.createElement('li')
+                li.innerHTML = `
+                <time>${iiii.date}</time><br/>
+                <a href="${iiii.link}">${iiii.title}</a>
+                <p>${iiii.description}</p>
+                `
+                ul.appendChild(li)
+            })
+        }
     }
 }
