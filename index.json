@@ -1,24 +1,14 @@
 {
     "description": [
-        "ギャラリーの前面にはあなたのギャラリー名を印字します。"
+        "付属のラベル紙に、ギャラリーに展示する大切なものの題名と説明文などを記入し、併せてご活用ください。"
     ],
     "readme": "README.md",
     "video": [
+        
         "www/video/000.mp4"
     ],
     "poster": "www/img/card.jpeg",
     "index": [
-        {
-            "subtitle": "仕様書",
-            "show": [
-                {
-                    "date": "GitHub",
-                    "title": "ウェブテンプレート",
-                    "link": "https://github.com/valuing-an-act-of-valuing/valuing-an-act-of-valuing.github.io",
-                    "description": ""
-                }
-            ]
-        },
         {
             "subtitle": "ギャラリー・リスト",
             "show": [

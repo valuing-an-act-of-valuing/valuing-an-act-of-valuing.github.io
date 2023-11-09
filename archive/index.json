@@ -1,0 +1,46 @@
+{
+    "description": [
+        "#0 Sub title"
+    ],
+    "readme": "README.md",
+    "poster": "img/001.jpeg",
+    "archive": [
+        {
+            "txt": [
+                "<strong>文章</strong>",
+                "文章"
+            ],
+            "place": "start"
+        },
+        {
+            "img": "img/002.jpeg",
+            "size": "90%"
+        },
+        {
+            "txt": [
+                "文章",
+                "<small>文章</small>"
+            ],
+            "place": "center",
+            "img": "img/003.jpeg",
+            "size": "90%"
+        },
+        {
+            "img": "img/004.jpeg",
+            "size": "90%"
+        },
+        {
+            "txt": [
+                "<u>文章</u>",
+                "<i>文章</i>"
+            ],
+            "place": "end",
+            "img": "img/005.jpeg",
+            "size": "90%"
+        },
+        {
+            "img": "img/006.jpeg",
+            "size": "90%"
+        }
+    ]
+}

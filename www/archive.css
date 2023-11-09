@@ -1,0 +1,171 @@
+main {
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+}
+
+main div,
+#value {
+    display: grid;
+}
+
+main div {
+    position: relative;
+    flex: 0 0 auto;
+    padding: 0.5rem;
+    overflow: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vh;
+    max-width: 90%;
+}
+
+#value p {
+    color: var(--sub-color);
+    font-family: var(--sub-font);
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+}
+
+h1 {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+}
+
+main div:not(#cover) p small {
+    font-size: 75%;
+}
+
+h1,
+#value h3,
+main div p {
+    font-size: 95%;
+}
+
+#value p {
+    font-size: 100%;
+}
+
+main div:not(#cover) p strong {
+    font-size: 111%;
+}
+
+#readme {
+    font-size: 125%;
+}
+
+h2 {
+    font-size: 150%;
+}
+
+h1 {
+    padding: 0;
+    margin: 0.5rem;
+}
+
+#value h3 {
+    padding: 0.25rem;
+    margin-bottom: 2.5rem;
+}
+
+h2,
+#readme {
+    padding: 0.5rem;
+    margin: 2.5rem;
+}
+
+main div:not(#cover) p {
+    font-family: var(--sub-font);
+    padding: 0.5rem;
+    margin: 2.5rem 1.25rem;
+    width: calc(100% - 2.5rem);
+}
+
+h2,
+#cover video {
+    position: absolute;
+}
+
+h2 {
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#cover video {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+#cover video {
+    width: 75%;
+}
+
+#cover {
+    background-size: 75%;
+}
+
+#value {
+    position: relative;
+    padding: 2.5rem;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#value h3 {
+    place-self: end center;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+}
+
+#value p {
+    position: absolute;
+    top: 1rem;
+    right: 0;
+}
+
+@media screen and (max-width: 100vh) {
+    html {
+        font-size: 3vw;
+    }
+
+    h2,
+    #readme {
+        padding: 0.5rem;
+        margin: 5%;
+    }
+}
+
+@media print {
+    h1 {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+    main {
+        position: relative;
+        width: 100%;
+        height: auto;
+        max-height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    main div {
+        flex: 0 0 auto;
+        overflow: auto;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        max-width: 100%;
+        height: 100vh;
+        page-break-before: always;
+    }
+}

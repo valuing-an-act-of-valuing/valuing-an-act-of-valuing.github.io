@@ -5,13 +5,25 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="format-detection" content="telephone=no" />
+  <script src="../www/index.js"></script>
+  <script>
+    const urlHash = location.hash;
+    let hash = urlHash.replace('#', '')
+    if (hash === 'all') {
+      //
+    } else if (hash) {
+      //
+    } else {
+      indexJSON('index.json')
+    }
+  </script>
 
   <!--og:meta-->
   <meta content="website" property="og:type">
-  <title>Gallery Your Name</title>
-  <meta content="Gallery Your Name" property="og:title">
-  <meta content="__" name="description">
-  <meta content="__" name="og:description">
+  <title>展覧会タイトル</title>
+  <meta content="展覧会タイトル" property="og:title">
+  <meta content="会期 : YYYY MM DD | 場所 : ___" name="description">
+  <meta content="会期 : YYYY MM DD | 場所 : ___" name="og:description">
 
   <!--for Twitter-->
   <meta content="summary_large_image" name="twitter:card">
@@ -29,7 +41,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,600;0,700;1,600&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="../mould/style.css">
+  <link rel="stylesheet" href="../www/style.css">
+  <link rel="stylesheet" href="../www/archive.css">
 
   <style>
     :root {
@@ -38,15 +51,38 @@
       --font-size: 16px;
       --text-color: #fff;
       --text-shadow: 0.1rem 0.1rem 0 #000;
-      --sub-color: yellow;
-      --bg-color: green;
+      --sub-color: red;
+      --bg-color: #777;
     }
   </style>
 </head>
 
 <body>
   <main>
+    <div id="cover">
+      <h1 class="main" onclick="history.back()">Gallery Your Name</h1>
+      <h2 class="main shadow"></h2>
+      <section id="value" class="sub"></section>
+    </div>
+    <div id="end">
+      <h3 id="readme" class="main shadow"></h3>
+    </div>
   </main>
+  <script>
+    const scrollElement = document.querySelector('main');
+    scrollElement.addEventListener('wheel', (e) => {
+      if (Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
+      const maxScrollLeft = scrollElement.scrollWidth - scrollElement.clientWidth;
+      if (
+        (scrollElement.scrollLeft <= 0 && e.deltaY < 0) ||
+        (scrollElement.scrollLeft >= maxScrollLeft && e.deltaY > 0)
+      )
+        return;
+
+      e.preventDefault();
+      scrollElement.scrollLeft += e.deltaY;
+    });
+  </script>
 </body>
 
 </html>

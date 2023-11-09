@@ -19,19 +19,48 @@ async function fetchMD(url = '', query = '') {
 function indexGallery(obj) {
     fetchMD(obj.readme, '#readme')
 
-    const main = document.querySelector('main')
-    const h1 = document.querySelector('main h1')
+    if (obj.archive) {
+        document.body.className = 'archive'
+        const end = document.querySelector('#end')
+        const archiveAll = obj.archive
+        for (const iiii of archiveAll) {
+            const div = document.createElement('div')
+            if (iiii.txt) {
+                const p = document.createElement('p')
+                p.className = 'shadow'
+                div.appendChild(p)
+                for (const i of iiii.txt) {
+                    p.innerHTML += i + '<br>'
+                }
+                p.style.placeSelf = iiii.place
+            }
 
-    h1.addEventListener('click', function () {
-        document.body.classList.toggle('enter')
-    });
+            if (iiii.img) {
+                div.style.backgroundImage = `url(${iiii.img})`
+                div.style.backgroundSize = iiii.size
+            }
+            end.insertAdjacentElement("beforebegin", div);
+
+        }
+    }
+
+    const h1 = document.querySelector('h1')
+    const cover = document.querySelector('#cover')
+
+    if (document.body.className === 'archive') {
+        cover.style.backgroundImage = `url(${obj.poster})`
+    } else {
+        h1.addEventListener('click', function () {
+            document.body.classList.toggle('enter')
+        });
+    }
 
     const h2 = document.querySelector('main h2')
     h2.textContent = document.querySelector('title').textContent
 
     if (obj.img) {
         let i = 0
-        main.style.backgroundImage = `url(${obj.img[i]})`
+        cover.style.backgroundImage = `url(${obj.img[i]})`
 
         window.setInterval(function () {
             if (i === obj.img.length - 1) {
@@ -39,14 +68,14 @@ function indexGallery(obj) {
             } else if (i => obj.img.length - 1) {
                 i++
             }
-            main.style.backgroundImage = `url(${obj.img[i]})`
+            cover.style.backgroundImage = `url(${obj.img[i]})`
         }, 2022);
     }
 
     if (obj.video) {
         let ii = 0
         const video = document.createElement('video')
-        main.appendChild(video)
+        cover.appendChild(video)
 
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             video.muted = true
@@ -90,7 +119,7 @@ function indexGallery(obj) {
     if (obj.description) {
         const description = document.querySelector('meta[name="description"]').getAttribute('content')
         const h3 = document.createElement('h3')
-        h3.textContent = description
+        h3.innerHTML = description.replace('|', '<br>')
         value.appendChild(h3)
 
         const descriptionAll = obj.description
