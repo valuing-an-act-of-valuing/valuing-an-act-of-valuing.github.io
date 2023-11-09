@@ -1,6 +1,6 @@
 {
     "description": [
-        "付属のラベル紙に、ギャラリーに展示する大切なものの題名と説明文などを記入し、併せてご活用ください。"
+        "作・クリエイティブコミュニティスペース ペフ"
     ],
     "readme": "README.md",
     "video": [
@@ -10,19 +10,42 @@
     "poster": "www/img/card.jpeg",
     "index": [
         {
-            "subtitle": "ギャラリー・リスト",
+            "subtitle": "Index",
             "show": [
                 {
-                    "date": "Mobile Based",
-                    "title": "KN Gallery",
-                    "link": "kn",
-                    "description": "私は、この小さなギャラリーを持って色んな場所に滞在し、その時その場所にあったものをこのギャラリーに展示します。"
+                    "date": "index.html",
+                    "title": "トップページ",
+                    "link": "index.html",
+                    "description": "タイトル・ディスクリプション・ファビコンなどのメタデータ、ギャラリー名・別サイトへのリンクなどを記述する"
                 },
                 {
-                    "date": "New York, USA",
-                    "title": "Gallery Laurel Schwulst",
-                    "link": "laurelschwulst",
-                    "description": "debuted in Green People, 2019 | moved into firefly sanctuary"
+                    "date": "README.md",
+                    "title": "ごあいさつ",
+                    "link": "README.md",
+                    "description": "トップページに表示する挨拶文を記述する"
+                },
+                {
+                    "date": "index.json",
+                    "title": "目次・コンテンツ",
+                    "link": "index.json",
+                    "description": "トップページに表示する動画、別ページへのリンクなどを設定する"
+                },
+                {
+                    "date": "img.json",
+                    "title": "トップページに画像のスライドショーを表示する場合",
+                    "link": "index.html#img",
+                    "description": "JSONにimgオブジェクトを設定・videoとposterオブジェクトを削除"
+                }
+            ]
+        },
+        {
+            "subtitle": "Pages",
+            "show": [
+                {
+                    "date": "Archive",
+                    "title": "アーカイブページ",
+                    "link": "archive/",
+                    "description": ""
                 }
             ]
         }

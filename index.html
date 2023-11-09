@@ -9,10 +9,8 @@
   <script>
     const urlHash = location.hash;
     let hash = urlHash.replace('#', '')
-    if (hash === 'all') {
-      //
-    } else if (hash) {
-      //
+    if (hash) {
+      indexJSON(hash + '.json')
     } else {
       indexJSON('index.json')
     }
@@ -22,7 +20,7 @@
   <meta content="website" property="og:type">
   <title>大切にすることを大切にするためのギャラリー</title>
   <meta content="this is a gallery for valuing an act of valuing" property="og:title">
-  <meta content="この透明な小さな箱は、あなたが大切にするものを大切に展示するためのギャラリーです。" name="description">
+  <meta content="大切にすることを大切にするためのウェブサイトの作り方" name="description">
   <meta content="size: 65 × 65 × 65 mm (inside: 59 × 59 × 59 mm)" name="og:description">
 
   <!--for Twitter-->
@@ -43,6 +41,7 @@
 
   <link rel="stylesheet" href="www/style.css">
   <link rel="stylesheet" href="www/index.css">
+
   <style>
     :root {
       --main-font: 'Source Serif Pro', serif;

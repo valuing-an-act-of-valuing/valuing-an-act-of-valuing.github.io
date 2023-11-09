@@ -4,6 +4,12 @@ main {
 }
 
 main h1,
+#value,
+footer {
+    transition: all 2.5s;
+}
+
+main h1,
 #cover {
     position: fixed;
     top: 50%;
@@ -82,12 +88,6 @@ main h2,
     padding: 0.25rem 0;
     margin: 0 0.25rem;
     text-decoration: none;
-}
-
-main h1,
-#value,
-footer {
-    transition: all 2.5s;
 }
 
 main h1,
