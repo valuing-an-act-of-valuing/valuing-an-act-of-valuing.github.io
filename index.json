@@ -14,23 +14,6 @@
     ],
     "index": [
         {
-            "subtitle": "Index",
-            "show": [
-                {
-                    "date": "index.html",
-                    "title": "トップページに動画を表示する場合",
-                    "link": "index.html#video",
-                    "description": ""
-                },
-                {
-                    "date": "アーカイブページ",
-                    "title": "Gallery Your Name",
-                    "link": "archive/",
-                    "description": ""
-                }
-            ]
-        },
-        {
             "subtitle": "How to Coding",
             "show": [
                 {
@@ -40,22 +23,33 @@
                     "description": "タイトル・ディスクリプション・ファビコンなどのメタデータ、別サイトへのリンクなどを記述する"
                 },
                 {
-                    "date": "README.md",
-                    "title": "ごあいさつ",
-                    "link": "README.md",
-                    "description": "トップページに表示する挨拶文を記述する"
-                },
-                {
                     "date": "index.json",
                     "title": "目次・コンテンツ",
                     "link": "index.json",
                     "description": "トップページに表示する画像、別ページへのリンクなどを設定する"
                 },
                 {
-                    "date": "video.json",
-                    "title": "トップページに動画を表示する場合",
-                    "link": "video.json",
-                    "description": "トップページに表示する動画、別ページへのリンクなどを設定する"
+                    "date": "README.md",
+                    "title": "ごあいさつ",
+                    "link": "README.md",
+                    "description": "トップページに表示する挨拶文を記述する"
+                },
+                {
+                    "date": "Gallery Your Name",
+                    "title": "展覧会ページ",
+                    "link": "archive/",
+                    "description": "展覧会ごとにディレクトリを作成する"
+                }
+            ]
+        },
+        {
+            "subtitle": "トップページに動画を表示",
+            "show": [
+                {
+                    "date": "例)",
+                    "title": "index.jsonを編集",
+                    "link": "index.html#video",
+                    "description": "JSONに video/poster オブジェクトを設定・img オブジェクトを削除する"
                 }
             ]
         }

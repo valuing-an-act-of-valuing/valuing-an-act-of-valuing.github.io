@@ -10,30 +10,36 @@
     "poster": "www/img/card.jpeg",
     "index": [
         {
-            "subtitle": "Index",
-            "show": [
-                {
-                    "date": "README.md",
-                    "title": "ごあいさつ",
-                    "link": "README.md",
-                    "description": "トップページに表示する挨拶文を記述する"
-                },
-                {
-                    "date": "video.json",
-                    "title": "目次・コンテンツ",
-                    "link": "video.json",
-                    "description": "トップページに表示する動画、別ページへのリンクなどを設定する"
-                }
-            ]
-        },
-        {
             "subtitle": "How to Coding",
             "show": [
                 {
                     "date": "index.html",
                     "title": "トップページ",
                     "link": "index.html",
-                    "description": "トップページに画像のスライドショーを表示する場合"
+                    "description": "タイトル・ディスクリプション・ファビコンなどのメタデータ、別サイトへのリンクなどを記述する"
+                },
+                {
+                    "date": "video.json",
+                    "title": "目次・コンテンツ",
+                    "link": "video.json",
+                    "description": "トップページに表示する動画、別ページへのリンクなどを設定する"
+                },
+                {
+                    "date": "README.md",
+                    "title": "ごあいさつ",
+                    "link": "README.md",
+                    "description": "トップページに表示する挨拶文を記述する"
+                }
+            ]
+        },
+        {
+            "subtitle": "トップページに画像のスライドショーを表示",
+            "show": [
+                {
+                    "date": "例)",
+                    "title": "index.jsonを編集",
+                    "link": "/",
+                    "description": "JSONに img オブジェクトを設定・video/poster オブジェクトを削除する"
                 }
             ]
         }
