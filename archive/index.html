@@ -7,29 +7,21 @@
   <meta name="format-detection" content="telephone=no" />
   <script src="../www/index.js"></script>
   <script>
-    const urlHash = location.hash;
-    let hash = urlHash.replace('#', '')
-    if (hash === 'all') {
-      //
-    } else if (hash) {
-      //
-    } else {
-      indexJSON('index.json')
-    }
+    indexJSON('index.json')
   </script>
 
   <!--og:meta-->
   <meta content="website" property="og:type">
-  <title>Gallery Laurel Schwulst</title>
+  <title>タイトル</title>
   <meta content="Gallery Laurel Schwulst" property="og:title">
-  <meta content="debuted in Green People, 2019 | moved into firefly sanctuary" name="description">
+  <meta content="Description | 説明" name="description">
   <meta content="debuted in Green People, 2019 | moved into firefly sanctuary" name="og:description">
 
   <!--for Twitter-->
   <meta content="summary_large_image" name="twitter:card">
-  <meta content="https://valuing-an-act-of-valuing.github.io" property="og:url">
-  <meta content="https://valuing-an-act-of-valuing.github.io/yourname/img/001.jpeg" property="og:image">
-  <meta content="https://valuing-an-act-of-valuing.github.io/yourname/img/001.jpeg" name="twitter:image:src">
+  <meta content="https://valuing-an-act-of-valuing.github.io/archive/" property="og:url">
+  <meta content="https://valuing-an-act-of-valuing.github.io/archive/img/001.jpeg" property="og:image">
+  <meta content="https://valuing-an-act-of-valuing.github.io/archive/img/001.jpeg" name="twitter:image:src">
 
   <!--Icons-->
   <link rel="icon" href="img/000.jpeg">
@@ -60,7 +52,7 @@
 <body>
   <main>
     <div id="cover">
-      <h1 class="main" onclick="history.back()">大切にすることを大切にするためのギャラリー</h1>
+      <h1 class="main" onclick="history.back()">Gallery Your Name</h1>
       <h2 class="main shadow"></h2>
       <section id="value" class="main"></section>
     </div>
@@ -68,21 +60,6 @@
       <h3 id="readme" class="main shadow"></h3>
     </div>
   </main>
-  <script>
-    const scrollElement = document.querySelector('main');
-    scrollElement.addEventListener('wheel', (e) => {
-      if (Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
-      const maxScrollLeft = scrollElement.scrollWidth - scrollElement.clientWidth;
-      if (
-        (scrollElement.scrollLeft <= 0 && e.deltaY < 0) ||
-        (scrollElement.scrollLeft >= maxScrollLeft && e.deltaY > 0)
-      )
-        return;
-
-      e.preventDefault();
-      scrollElement.scrollLeft += e.deltaY;
-    });
-  </script>
 </body>
 
 </html>

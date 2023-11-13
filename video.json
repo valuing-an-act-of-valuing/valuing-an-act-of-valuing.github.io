@@ -1,0 +1,41 @@
+{
+    "description": [
+        "作・クリエイティブコミュニティスペース ペフ"
+    ],
+    "readme": "README.md",
+    "video": [
+        
+        "www/video/000.mp4"
+    ],
+    "poster": "www/img/card.jpeg",
+    "index": [
+        {
+            "subtitle": "Index",
+            "show": [
+                {
+                    "date": "README.md",
+                    "title": "ごあいさつ",
+                    "link": "README.md",
+                    "description": "トップページに表示する挨拶文を記述する"
+                },
+                {
+                    "date": "video.json",
+                    "title": "目次・コンテンツ",
+                    "link": "video.json",
+                    "description": "トップページに表示する動画、別ページへのリンクなどを設定する"
+                }
+            ]
+        },
+        {
+            "subtitle": "How to Coding",
+            "show": [
+                {
+                    "date": "index.html",
+                    "title": "トップページ",
+                    "link": "index.html",
+                    "description": "トップページに画像のスライドショーを表示する場合"
+                }
+            ]
+        }
+    ]
+}

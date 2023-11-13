@@ -121,7 +121,9 @@ h1:hover {
     cursor: pointer;
 }
 
-.enter main h1,
+.enter main h1 {
+    width: max-content;
+}
 footer {
     width: 100%;
 }
@@ -131,10 +133,10 @@ footer {
     flex-direction: column;
     place-self: start center;
     font-size: 0%;
-    padding: 4.5rem 2.5rem 1rem;
+    padding: 4.5rem 0.5rem 1rem;
     margin: 0 auto;
-    width: calc(100% - 3.5rem);
-    max-width: 1000px;
+    width: calc(100% - 5rem);
+    max-width: 750px;
     overflow: auto;
 }
 

@@ -40,8 +40,21 @@ function indexGallery(obj) {
                 div.style.backgroundSize = iiii.size
             }
             end.insertAdjacentElement("beforebegin", div);
-
         }
+
+        const wheelscroll = document.querySelector('main');
+        wheelscroll.addEventListener('wheel', (e) => {
+            if (Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
+            const maxScrollLeft = wheelscroll.scrollWidth - wheelscroll.clientWidth;
+            if (
+                (wheelscroll.scrollLeft <= 0 && e.deltaY < 0) ||
+                (wheelscroll.scrollLeft >= maxScrollLeft && e.deltaY > 0)
+            )
+                return;
+
+            e.preventDefault();
+            wheelscroll.scrollLeft += e.deltaY;
+        });
     }
 
     const h1 = document.querySelector('h1')

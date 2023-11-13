@@ -3,20 +3,41 @@
         "作・クリエイティブコミュニティスペース ペフ"
     ],
     "readme": "README.md",
-    "video": [
-        
-        "www/video/000.mp4"
+    "img": [
+        "www/img/001.jpeg",
+        "www/img/002.jpeg",
+        "www/img/003.jpeg",
+        "www/img/004.jpeg",
+        "www/img/005.jpeg",
+        "www/img/006.jpeg",
+        "www/img/007.jpeg"
     ],
-    "poster": "www/img/card.jpeg",
     "index": [
         {
             "subtitle": "Index",
             "show": [
                 {
                     "date": "index.html",
+                    "title": "トップページに動画を表示する場合",
+                    "link": "/#video",
+                    "description": ""
+                },
+                {
+                    "date": "アーカイブページ",
+                    "title": "Gallery Your Name",
+                    "link": "archive/",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "subtitle": "How to Coding",
+            "show": [
+                {
+                    "date": "index.html",
                     "title": "トップページ",
                     "link": "index.html",
-                    "description": "タイトル・ディスクリプション・ファビコンなどのメタデータ、ギャラリー名・別サイトへのリンクなどを記述する"
+                    "description": "タイトル・ディスクリプション・ファビコンなどのメタデータ、別サイトへのリンクなどを記述する"
                 },
                 {
                     "date": "README.md",
@@ -28,24 +49,13 @@
                     "date": "index.json",
                     "title": "目次・コンテンツ",
                     "link": "index.json",
-                    "description": "トップページに表示する動画、別ページへのリンクなどを設定する"
+                    "description": "トップページに表示する画像、別ページへのリンクなどを設定する"
                 },
                 {
-                    "date": "img.json",
-                    "title": "トップページに画像のスライドショーを表示する場合",
-                    "link": "index.html#img",
-                    "description": "JSONにimgオブジェクトを設定・videoとposterオブジェクトを削除"
-                }
-            ]
-        },
-        {
-            "subtitle": "Pages",
-            "show": [
-                {
-                    "date": "Archive",
-                    "title": "アーカイブページ",
-                    "link": "archive/",
-                    "description": ""
+                    "date": "video.json",
+                    "title": "トップページに動画を表示する場合",
+                    "link": "video.json",
+                    "description": "トップページに表示する動画、別ページへのリンクなどを設定する"
                 }
             ]
         }
