@@ -48,7 +48,7 @@
                 {
                     "date": "例)",
                     "title": "index.jsonを編集",
-                    "link": "index.html#video",
+                    "link": "/#video",
                     "description": "JSONに video/poster オブジェクトを設定・img オブジェクトを削除する"
                 }
             ]
