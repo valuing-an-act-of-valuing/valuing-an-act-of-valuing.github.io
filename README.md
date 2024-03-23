@@ -1,1 +1,1 @@
-Copyright © You All Rights Reserved.
+Copyright © You (Not) All Rights Reserved.
